@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofølje</title>
+    <title>Min Portefølje</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#om-meg">Om Meg</a></li>
+            <li><a href="#prosjekter">Prosjekter</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+    <header>
+        
+        <div class="overlay">
+            <div class="text">
+                <h1>Ola Normann Design</h1>
+            </div>
+        </div>
+        <div class="right" id="slideshow">
+            <img src="image1.jpg" alt="Bakgrunn 1" class="active">
+            <img src="image2.png" alt="Bakgrunn 2">
+            <img src="image3.png" alt="Bakgrunn 3">
+        </div>
+    </header>
     
+    <main>
+        <section id="om-meg">
+            <h2>Om Meg</h2>
+            <p>Her er litt informasjon om meg.</p>
+        </section>
+        <section id="prosjekter">
+            <h2>Prosjekter</h2>
+            <p>Her er noen av mine prosjekter.</p>
+        </section>
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Her kan du kontakte meg.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Min Portefølje</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

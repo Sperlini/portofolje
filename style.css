@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0; /* Sikre at det ikke er margin rundt body */
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1; /* Sørg for at headeren ligger under nav */
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2; /* Sørg for at teksten er synlig over bildene */
+    background-color: rgba(0, 0, 0, 0.3); /* Optional for better text visibility */
+}
+
+header .text {
+    width: 50%;
+    text-align: left;
+    padding: 0 20px;
+}
+
+header .text h1 {
+    font-size: 4rem;
+    color: white;
+}
+
+header .right {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+header .right img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+header .right img.active {
+    opacity: 1;
+}
+
+/* Navigasjonsstil */
+nav {
+    position:absolute; /* Sørg for at nav alltid er på toppen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0); /* Gjør bakgrunnen litt gjennomsiktig */
+    z-index: 3; /* Sørg for at nav ligger over headeren */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px; /* Margin mellom meny elementer */
+}
+
+nav ul li a {
+    color: #ffffff; /* Endret fra hvit for bedre kontrast mot hvit bakgrunn */
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(87, 87, 87, 0.2); /* Semi-transparent hover effect */
+}
+
+main {
+    padding-top: 70px; /* Gi plass til nav */
+}
+
+main section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1; /* Start synlig */
+    transform: translateY(0); /* Start synlig */
+    z-index: 4; /* Sørg for at fotnoten ligger over headeren og nav */
+}
+
+footer.hidden {
+    transform: translateY(100%);
+    opacity: 0; /* Gjør fotnoten usynlig */
+}
+
+footer.visible {
+    transform: translateY(0);
+    opacity: 1; /* Gjør fotnoten synlig */
+}
+
+footer p {
+    margin: 0;
+}
