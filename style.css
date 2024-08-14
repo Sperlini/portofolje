@@ -74,13 +74,13 @@ header .right img.active {
 
 header .logo-container {
     position: fixed; /* Fester logoen til en fast posisjon */
-    top: 20px; /* Avstand fra toppen av skjermen */
+    top: 35px; /* Avstand fra toppen av skjermen */
     left: 20px; /* Avstand fra venstre kant av skjermen */
     z-index: 4; /* Sørg for at logoen ligger over alt annet */
 }
 
 header .logo-container img {
-    width: 50px; /* Juster størrelsen på logoen */
+    width: 20vh; /* Juster størrelsen på logoen */
     height: auto; /* Behold proporsjoner av logoen */
 }
 
