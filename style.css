@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Lato", sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     margin: 0; /* Sikre at det ikke er margin rundt body */
+    /*padding: 0 20vh; /* Legg til padding på venstre og høyre side */ 
 }
 
 header {
@@ -39,7 +40,14 @@ header .text {
 header .text h1 {
     font-size: 4rem;
     color: white;
+    padding-left: 20vh;
 }
+header .text h2 {
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 25vh;
+}
+
 
 header .right {
     width: 100%;
@@ -52,6 +60,7 @@ header .right img {
     width: 100%; /* Fyller hele bredden av containeren */
     height: 100%; /* Fyller hele høyden av containeren */
     object-fit: cover; /* Sørg for at bildet fyller hele containeren uten å forvrenge */
+    object-position: center;  /* mulig å endre her i media query (!) */ 
     position: absolute;
     top: 0;
     right: 0;
@@ -71,7 +80,7 @@ header .logo-container {
 }
 
 header .logo-container img {
-    width: 150px; /* Juster størrelsen på logoen */
+    width: 50px; /* Juster størrelsen på logoen */
     height: auto; /* Behold proporsjoner av logoen */
 }
 
@@ -104,7 +113,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: rgba(87, 87, 87, 0.2); /* Semi-transparent hover effect */
+    background-color: rgba(87, 87, 87, 0.5); /* Semi-transparent hover effect */
 }
 
 main {
@@ -123,8 +132,8 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
-    color: white;
+    background-color: #33333300;   /*footer bakgrunn */
+    color: black;
     text-align: center;
     padding: 10px;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -146,3 +155,106 @@ footer.visible {
 footer p {
     margin: 0;
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    header {
+        height: 100vh; /* Reduser høyden på headeren for mindre skjermer */
+    }
+    header .text {
+        width: 100%; /* Juster tekstbredden */
+        padding: 0 50px;
+        text-align: left; /* Plasser teksten til venstre */
+        box-sizing: border-box; /* Sørg for at padding er inkludert i bredden */
+    }
+    header .text h1 {
+        font-size: 2rem; /* Juster font-størrelsen */
+        margin-left: 0; /* Fjerner eventuell venstre margin */
+        padding-left: 20px;
+    }
+    header .text h2 {
+        font-size: 1rem; /* Juster font-størrelsen */
+        margin-left: 0; /* Fjerner eventuell venstre margin */
+        padding-left: 40px;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lato-thin {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .lato-thin-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .lato-light-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .lato-bold-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .lato-black-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
