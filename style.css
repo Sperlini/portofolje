@@ -20,6 +20,7 @@ body {
      /*background-position: center; /* Plasser bildet sentrert */
      /*background-repeat: no-repeat; /* Ikke gjenta bildet */
      /* Legg til padding på venstre og høyre side */
+     transition: background-color 1s ease;
 }
 .center-text {
     display: flex;
@@ -65,14 +66,14 @@ header .text h1 {
     font-size: 8rem;
     color: white;
     padding-left: 20vh;
-    background: linear-gradient(to right, #11a4ee, rgb(175, 224, 247));
+    background: linear-gradient(to right, #FFDDC1, #f7a87b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     pointer-events: none;
     opacity: 0;
     animation: startfade 1s ease-in 0.001s;
     animation-fill-mode: both;
-    
+   
     
 }
 
@@ -196,11 +197,31 @@ main {
 main section {
     background: white;
     /*padding: 85px; */
-    margin-bottom: 10vh;
+    margin-bottom: 40vh;
     border-radius: 5px;
     animation: appear 5s linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
+}
+section h1 {
+    opacity: 0; /* Start hidden */
+    transform: translateY(-15px); /* Start slightly above */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section h1.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to final position */
+}
+section p {
+    opacity: 0; /* Start hidden */
+    transform: translateY(-15px); /* Start slightly above */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section p.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to final position */
 }
 
 #om-meg{
@@ -232,13 +253,83 @@ main section {
 }
 
 
+.slideshow-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: rgb(255, 255, 255);
+   
+}
+
+.slideshow {
+    display: flex;
+    animation: slide 18s linear infinite;
+    padding-bottom: 10vh;
+    padding-top: 10vh;
+   
+}
+
+.slide {
+    min-width: 25%; /* 100% / 4 visible slides */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide img {
+    width: 10vh;
+    display: block;
+    height: auto;
+}
+
+.slide p {
+    padding-left: 1.2vh;
+}
+
+.fagfelt {
+
+    padding: 20vh;
+    background-color: transparent;
+    font-size: 10vh;
+     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+  
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-250%);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-300%);
+    }
+}
+
+
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: #33333300;   /*footer bakgrunn */
-    color: black;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 10px;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -307,6 +398,7 @@ footer p {
 
 
 
+
 @media (max-width: 768px) {
     header {
         height: 100vh; /* Reduser høyden på headeren for mindre skjermer */
@@ -354,6 +446,23 @@ footer p {
 
 
 
+.color1 {
+    background-color: #FFDDC1; /* Light peach */
+}
+
+.color2 {
+    background-color: #FFC3A0; /* Light salmon */
+}
+
+.color3 {
+   
+    background-color: #FFABAB; /* Light coral */
+}
+
+.color4 {
+   
+    background-color: #f87878; /* Light coral */
+}
 
 
 

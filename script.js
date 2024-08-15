@@ -41,4 +41,63 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Kjør ved scroll
     window.addEventListener("scroll", handleScroll);
+
+    
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const slideshow = document.querySelector('.slideshow');
+    const slides = document.querySelectorAll('.slide');
+    
+    const totalSlides = slides.length;
+    const visibleSlides = 20; // Number of visible slides at a time
+    const slideWidth = 100 / visibleSlides; // Percentage width for each slide
+    
+    // Clone the first 4 slides and append them to the end of the slideshow
+    for (let i = 0; i < visibleSlides; i++) {
+        slideshow.appendChild(slides[i].cloneNode(true));
+    }
+
+    // Set the width of the slideshow container
+    slideshow.style.width = `${(totalSlides + visibleSlides) * slideWidth}%`;
+
+    let index = 0;
+    setInterval(() => {
+        index++;
+        slideshow.style.transition = 'transform 0.5s ease-in-out';
+        slideshow.style.transform = `translateX(-${index * slideWidth}%)`;
+        
+        // Reset the position to create the infinite loop effect
+        if (index >= totalSlides) {
+            setTimeout(() => {
+                slideshow.style.transition = 'none';
+                slideshow.style.transform = 'translateX(0)';
+                index = 0;
+            }, 900);
+        }
+    }, 3000); // Adjust the interval as needed
+});
+
+const boxes = document.querySelectorAll('.box');
+    window.addEventListener('scroll', function() {
+        let currentColorClass = '';
+
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top;
+            const boxBottom = box.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+            
+            if (boxTop < windowHeight && boxBottom >= 0) {
+                currentColorClass = box.classList.contains('color1') ? 'color1' :
+                                    box.classList.contains('color2') ? 'color2' :
+                                    box.classList.contains('color3') ? 'color3' :
+                                    box.classList.contains('color4') ? 'color4' : '';
+                return; // Exit loop early if any box is in view
+            }
+        });
+
+        document.body.className = ''; // Remove any existing color class
+        if (currentColorClass) {
+            document.body.classList.add(currentColorClass); // Add the new color class
+        }
+    });
