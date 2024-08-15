@@ -121,3 +121,28 @@ const boxes = document.querySelectorAll('.box');
             observer.observe(section);
         });
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Select all elements you want to observe
+        const elements = document.querySelectorAll('.fagfelt h1 .fagfelt h2');
+    
+        // Options for the IntersectionObserver
+        const options = {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+    
+        // Create a new IntersectionObserver instance
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate'); // Add class to trigger the CSS animation
+                    observer.unobserve(entry.target); // Stop observing once the animation has been triggered
+                }
+            });
+        }, options);
+    
+        // Start observing each element
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    });

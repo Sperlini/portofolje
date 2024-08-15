@@ -86,7 +86,7 @@ header .text h1 {
     }
 }
 
-@keyframes appear{
+/*@keyframes appear{
     from    {
         opacity: 0;
         scale: 0.5;
@@ -95,7 +95,7 @@ header .text h1 {
         opacity: 1;
         scale: 1;
     }
-}
+} */
 
 /*@keyframes appear{
     from    {
@@ -109,40 +109,41 @@ header .text h1 {
     
 }*/
 
-@keyframes fagom{
-    from    {
+@keyframes fagom1 {
+    from {
         opacity: 0;
-        transform: translateX(-400px)
+        transform: translateY(px);
     }
     to {
         opacity: 1;
-        transform: translateX(0px)
+        transform: translateY(0);
     }
-    
 }
 
-@keyframes fagom2{
-    from    {
+/* Keyframes for h2 */
+@keyframes fagom3 {
+    from {
         opacity: 0;
-        transform: translateY(-800px)
+        transform: translateX(-100px);
     }
     to {
         opacity: 1;
-        transform: translateY(0px)
+        transform: translateX(0);
     }
-    
 }
-@keyframes fagom3{
-    from    {
+
+/* Keyframes for h3 */
+@keyframes fagom {
+    from {
         opacity: 0;
-        transform: translateX(400px)
+        transform: translateY(100px);
     }
     to {
         opacity: 1;
-        transform: translateX(0px)
+        transform: translateY(0);
     }
-    
 }
+
 
 header .text h2 {
     font-size: 1.5rem;
@@ -234,9 +235,9 @@ main section {
     /*padding: 85px; */
     margin-bottom: 40vh;
     border-radius: 5px;
-    animation: appear 5s linear;
+    /*animation: appear 5s linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 40%; */
 }
 section h1 {
     opacity: 0; /* Start hidden */
@@ -336,20 +337,23 @@ section h1.visible {
     
 }
 .fagfelt h1 {
-    background-color:#FFABAB;
-    writing-mode:vertical-lr;
-    animation: fagom2 5s linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    background-color: #FFABAB;
+    writing-mode: vertical-lr;
     padding-right: 50vh;
+    opacity: 0; /* Start hidden */
+    transform: translateY(100px); /* Start off-screen */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;   /* Smooth transition */
+    animation: fagom2 2s linear;
+}
+.fagfelt h1.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .fagfelt h2 {
     background-color: #f7a87b;
-    writing-mode:sideways-lr;
-    animation: fagom3 5s linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    
+    animation: fagom3 2s linear;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -357,7 +361,9 @@ section h1.visible {
     justify-content: center;
     text-align: center;
     color: white;
-    
+    transform: translateY(100px); /* Start off-screen */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+    opacity: 0;
     
  
     
@@ -365,16 +371,25 @@ section h1.visible {
 .fagfelt h3 {
     background-color:#f87878;
     writing-mode:vertical-rl;
-    animation: fagom 5s linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
     padding: 2vh;
     color: #FFC3A0;
     width: 20vh;
-    
-  
-  
-    
+    transform: translateY(100px); /* Start off-screen */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+    opacity: 0;
+    animation: fagom 2s linear;
+}
+
+
+.fagfelt h2.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation for h3 */
+.fagfelt h3.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -450,8 +465,8 @@ footer p {
 
 .text-content {
     flex: 1 1 50%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 60% */
-    padding-right: 2vh;
-    padding-left: 2vh;
+    padding-right: 4vh;
+    padding-left: 4vh;
     text-align: center;
 }
 
@@ -519,21 +534,14 @@ footer p {
 
     .slideshow{
         padding-bottom: 0vh;
-        padding-top: 0vh;
+    padding-top: 0vh;
     }
 
     .slide {
         min-width: 30%; /* 100% / 4 visible slides */
     }
 
-    #box img {
-      
-        height: 40vh;
-    }
-
-    .content-wrapper {
-        height: 40vh;
-    }
+    
     
 }
 
