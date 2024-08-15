@@ -51,7 +51,7 @@ header .overlay {
 }
 
 header .text {
-    width: 50%;
+    width: 100%;
     text-align: left;
     padding: 0 20px;
     pointer-events: none;
@@ -62,7 +62,7 @@ header .text {
 }
 
 header .text h1 {
-    font-size: 4rem;
+    font-size: 8rem;
     color: white;
     padding-left: 20vh;
     background: linear-gradient(to right, rgb(113, 196, 238), rgb(175, 224, 247));
@@ -203,6 +203,35 @@ main section {
     animation-range: entry 0% cover 40%;
 }
 
+#om-meg{
+    padding: 25vh 20vh;
+    display: flex;
+    align-items: flex-start;
+    background-color: #f4f4f4;
+    
+}
+#om-meg p{
+    flex: 1 1 100%;
+    font-size: 25px;
+}
+#om-meg h1{
+    font-size: 50px;
+    padding-bottom: 1rem;
+    margin: 0;
+}
+#om-meg img {
+    padding-left: 2rem;
+    padding-top: 4rem;
+    max-width: 50vh; /* Juster størrelsen på bildet etter behov */
+    /* Litt mellomrom mellom bildet og teksten */
+    flex: 1 1 100%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 40% */
+    object-fit: cover;
+}
+#om-meg div {
+    flex: 1; /* Lar teksten ta opp tilgjengelig plass */
+}
+
+
 footer {
     position: fixed;
     bottom: 0;
@@ -289,7 +318,7 @@ footer p {
         box-sizing: border-box; /* Sørg for at padding er inkludert i bredden */
     }
     header .text h1 {
-        font-size: 2rem; /* Juster font-størrelsen */
+        font-size: 3.5rem; /* Juster font-størrelsen */
         margin-left: 0; /* Fjerner eventuell venstre margin */
         padding-left: 20px;
     }
@@ -297,6 +326,27 @@ footer p {
         font-size: 1rem; /* Juster font-størrelsen */
         margin-left: 0; /* Fjerner eventuell venstre margin */
         padding-left: 40px;
+    }
+    #om-meg img {
+     
+    
+        max-width: 20vh; /* Juster størrelsen på bildet etter behov */
+        padding-left: 1rem;
+        padding-top: 3rem;
+    }
+
+    #om-meg {
+        padding: 1rem;
+        
+    }
+
+    #om-meg h1 {
+        font-size: 30px;
+        
+    }
+    #om-meg p {
+        font-size: 15px;
+        
     }
     
 }
