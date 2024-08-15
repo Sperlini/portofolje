@@ -65,7 +65,7 @@ header .text h1 {
     font-size: 8rem;
     color: white;
     padding-left: 20vh;
-    background: linear-gradient(to right, rgb(113, 196, 238), rgb(175, 224, 247));
+    background: linear-gradient(to right, #11a4ee, rgb(175, 224, 247));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     pointer-events: none;
