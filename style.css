@@ -10,6 +10,12 @@ body {
     background-color: #f4f4f4;
     margin: 0; /* Sikre at det ikke er margin rundt body */
     /*padding: 0 20vh; /* Legg til padding på venstre og høyre side */ 
+    
+    /*background-image: url('path/to/your/image.jpg'); /* Legg til bakgrunnsbilde */
+     /*background-size: cover; /* Skaler bildet for å dekke hele bakgrunnen */
+     /*background-position: center; /* Plasser bildet sentrert */
+     /*background-repeat: no-repeat; /* Ikke gjenta bildet */
+     /* Legg til padding på venstre og høyre side */
 }
 
 header {
@@ -74,14 +80,17 @@ header .right img.active {
 
 header .logo-container {
     position: fixed; /* Fester logoen til en fast posisjon */
-    top: 35px; /* Avstand fra toppen av skjermen */
-    left: 20px; /* Avstand fra venstre kant av skjermen */
+    top: 25px; /* Avstand fra toppen av skjermen */
+    left: 10px; /* Avstand fra venstre kant av skjermen */
+    
     z-index: 4; /* Sørg for at logoen ligger over alt annet */
 }
 
 header .logo-container img {
     width: 20vh; /* Juster størrelsen på logoen */
     height: auto; /* Behold proporsjoner av logoen */
+    max-width: 20vh;
+    max-height: 100%;
 }
 
 /* Navigasjonsstil */
@@ -117,14 +126,19 @@ nav ul li a:hover {
 }
 
 main {
-    padding-top: 70px; /* Gi plass til nav */
+    padding-top: 70px;
+    width: 80%;
+    margin: 0 auto; /* Horisontal sentrering av main-elementet */
+  
+    align-items: center; /* Vertikal sentrering av innhold i main */
 }
 
 main section {
     background: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    /*padding: 85px; */
+    margin-bottom: 10vh;
     border-radius: 5px;
+
 }
 
 footer {
@@ -160,6 +174,44 @@ footer p {
 
 
 
+
+
+ 
+    
+
+/* Seksjon Om Meg */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+
+.text-content {
+    flex: 1 1 50%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 60% */
+    padding-right: 5vh;
+    padding-left: 5vh;
+    text-align: center;
+}
+
+.image-content {
+    flex: 1 1 50%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 40% */
+}
+
+#om-meg img {
+    width: 100%; /* Sikrer at bildet fyller containerens bredde */
+    height: auto;
+    object-fit: cover;
+}
+
+.content-wrapper:hover{
+    box-shadow:  12px 12px 12px rgba(0, 0, 0, 0.1),
+    -10px -10px 10px white; 
+}
 
 
 
