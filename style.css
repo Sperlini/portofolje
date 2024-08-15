@@ -109,6 +109,41 @@ header .text h1 {
     
 }*/
 
+@keyframes fagom{
+    from    {
+        opacity: 0;
+        transform: translateX(-400px)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+    
+}
+
+@keyframes fagom2{
+    from    {
+        opacity: 0;
+        transform: translateY(-800px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+    
+}
+@keyframes fagom3{
+    from    {
+        opacity: 0;
+        transform: translateX(400px)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+    
+}
+
 header .text h2 {
     font-size: 1.5rem;
     color: white;
@@ -213,16 +248,16 @@ section h1.visible {
     opacity: 1; /* Fade in */
     transform: translateY(0); /* Move to final position */
 }
-section p {
-    opacity: 0; /* Start hidden */
-    transform: translateY(-15px); /* Start slightly above */
+/*section p {
+    opacity: 0;  
+    transform: translateY(-15px); 
     transition: opacity 1s ease-out, transform 1s ease-out;
-}
+}*/
 
-section p.visible {
-    opacity: 1; /* Fade in */
-    transform: translateY(0); /* Move to final position */
-}
+/*section p.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+} */
 
 #om-meg{
     padding: 25vh 20vh;
@@ -270,7 +305,7 @@ section p.visible {
 }
 
 .slide {
-    min-width: 25%; /* 100% / 4 visible slides */
+    min-width: 20%; /* 100% / 4 visible slides */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -290,18 +325,54 @@ section p.visible {
 }
 
 .fagfelt {
-
-    padding: 20vh;
+    
+    
     background-color: transparent;
     font-size: 10vh;
      box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    
+    
+}
+.fagfelt h1 {
+    background-color:#FFABAB;
+    writing-mode:vertical-lr;
+    animation: fagom2 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    padding-right: 50vh;
+}
+
+.fagfelt h2 {
+    background-color: #f7a87b;
+    writing-mode:sideways-lr;
+    animation: fagom3 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: white; 
+    
+ 
+    
 }
+.fagfelt h3 {
+    background-color:#f87878;
+    writing-mode:vertical-rl;
+    animation: fagom 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    padding: 2vh;
+    color: #FFC3A0;
   
+  
+    
+}
 
 
 @keyframes slide {
@@ -439,6 +510,10 @@ footer p {
     #om-meg p {
         font-size: 15px;
         
+    }
+
+    .slide {
+        min-width: 30%; /* 100% / 4 visible slides */
     }
     
 }

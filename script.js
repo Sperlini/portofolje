@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const slides = document.querySelectorAll('.slide');
     
     const totalSlides = slides.length;
-    const visibleSlides = 20; // Number of visible slides at a time
+    const visibleSlides = 30; // Number of visible slides at a time
     const slideWidth = 100 / visibleSlides; // Percentage width for each slide
     
     // Clone the first 4 slides and append them to the end of the slideshow
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 slideshow.style.transition = 'none';
                 slideshow.style.transform = 'translateX(0)';
                 index = 0;
-            }, 900);
+            }, 700);
         }
     }, 3000); // Adjust the interval as needed
 });
@@ -100,4 +100,24 @@ const boxes = document.querySelectorAll('.box');
         if (currentColorClass) {
             document.body.classList.add(currentColorClass); // Add the new color class
         }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Create an intersection observer instance
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add class to h1 when section is visible
+                    entry.target.querySelector('h1').classList.add('visible');
+                    /*entry.target.querySelector('p').classList.add('visible'); */
+                }
+            });
+        }, {
+            threshold: 0.1 // Adjust this to determine when the element should become visible
+        });
+    
+        // Observe each section within main
+        document.querySelectorAll('main section').forEach(section => {
+            observer.observe(section);
+        });
     });
