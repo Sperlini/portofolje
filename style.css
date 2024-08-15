@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Lato", sans-serif;
     line-height: 1.6;
@@ -16,6 +20,15 @@ body {
      /*background-position: center; /* Plasser bildet sentrert */
      /*background-repeat: no-repeat; /* Ikke gjenta bildet */
      /* Legg til padding på venstre og høyre side */
+}
+.center-text {
+    display: flex;
+    justify-content: center; /* Sentrerer horisontalt */
+    align-items: center; /* Sentrerer vertikalt */
+    text-align: center; /* Sentrerer teksten inne i elementet */
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    
 }
 
 header {
@@ -41,13 +54,60 @@ header .text {
     width: 50%;
     text-align: left;
     padding: 0 20px;
+    pointer-events: none;
+    opacity: 0;
+    animation: startfade 1s ease-in 0.02s;
+    animation-fill-mode: both;
+    
 }
 
 header .text h1 {
     font-size: 4rem;
     color: white;
     padding-left: 20vh;
+    background: linear-gradient(to right, rgb(113, 196, 238), rgb(175, 224, 247));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    pointer-events: none;
+    opacity: 0;
+    animation: startfade 1s ease-in 0.001s;
+    animation-fill-mode: both;
+    
+    
 }
+
+@keyframes startfade {
+    0% {
+        opacity: 0;
+    }
+    100%{ opacity: 1;
+    
+    }
+}
+
+@keyframes appear{
+    from    {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/*@keyframes appear{
+    from    {
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+    
+}*/
+
 header .text h2 {
     font-size: 1.5rem;
     color: white;
@@ -138,7 +198,9 @@ main section {
     /*padding: 85px; */
     margin-bottom: 10vh;
     border-radius: 5px;
-
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 footer {
@@ -184,10 +246,10 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
     background: white;
     border-radius: 5px;
     margin-bottom: 20px;
+    
     
 }
 
@@ -202,7 +264,7 @@ footer p {
     flex: 1 1 50%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 40% */
 }
 
-#om-meg img {
+#box img {
     width: 100%; /* Sikrer at bildet fyller containerens bredde */
     height: auto;
     object-fit: cover;
