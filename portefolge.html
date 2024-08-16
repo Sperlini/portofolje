@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portefølje</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Hello world</h1>
+<style>
+header {
+   
+    height: 30vh; 
+}</style>
+
+
+<body style=" background: linear-gradient(to right, #FFDDC1, #f7a87b, #e60000);">
+    <nav>
+        <ul>
+            <li class="lato-bold"><a href="index.html">Hjem</a></li>
+            <li class="lato-bold"><a href="portfolio.html">Kontakt</a></li>
+            <!-- Andre navigasjonspunkter -->
+        </ul>
+    </nav>
+
+
+
+    <header class="portfolio-header">
+        <h1>Portefølje</h1>
+        <div class="logo-container">
+            <a href="/index.html">
+                <img src="logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="portfolio" >
+          
+            <div class="portfolio-filter">
+                <button class="lato-bold" data-filter="all">Alle</button>
+                <button class="lato-bold" data-filter="web">Webutvikling</button>
+                <button class="lato-bold" data-filter="design">Design</button>
+                <button class="lato-bold" data-filter="other">Annet</button>
+            </div>
+
+            <div class="portfolio-gallery">
+                <div class="portfolio-item" data-category="web">
+                    <img src="illu-logo.png" alt="Project 1">
+                    <p>React</p>
+                    <div class="project-details">
+                        <h2>Project 1</h2>
+                        <p>Detaljert beskrivelse av prosjekt 1.</p>
+                        <img src="project1-detail.jpg" alt="Project 1 Details">
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <img src="maya-logo.png" alt="Project 1">
+                    <p>React</p>
+                    <div class="project-details">
+                        <h2>Project 1</h2>
+                        <p>Detaljert beskrivelse av prosjekt 1.</p>
+                        <img src="project1-detail.jpg" alt="Project 1 Details">
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="ps-logo.png" alt="Project 2">
+                    <p>Photoshop</p>
+                    <div class="project-details">
+                        <h2>Project 2</h2>
+                        <p>Detaljert beskrivelse av prosjekt 2.</p>
+                        <img src="image1.jpg" alt="Project 2 Details">
+                        <a href="/index.html">Se mer</a>
+                    </div>
+                </div>
+                <!-- Flere prosjekter -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="lato-light">&copy; Facebook</p>
+        <p class="lato-light">&copy; Instagram</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
