@@ -163,10 +163,6 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
     });
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Hent filter fra URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const filterFromUrl = urlParams.get('filter');
-    
         // Funksjon for å anvende filteret
         function applyFilter(filter) {
             document.querySelectorAll('.portfolio-item').forEach(item => {
@@ -178,19 +174,20 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
             });
         }
     
+        // Hent filter fra URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const filterFromUrl = urlParams.get('filter') || 'all';
+    
         // Bruk filter fra URL ved last av siden
-        if (filterFromUrl) {
-            applyFilter(filterFromUrl);
-            // Marker den aktive filterknappen
-            document.querySelectorAll('.portfolio-filter button').forEach(button => {
-                button.classList.remove('active');
-                if (button.getAttribute('data-filter') === filterFromUrl) {
-                    button.classList.add('active');
-                }
-            });
-        } else {
-            applyFilter('all'); // Vis alle som standard
-        }
+        applyFilter(filterFromUrl);
+    
+        // Marker den aktive filterknappen
+        document.querySelectorAll('.portfolio-filter button').forEach(button => {
+            button.classList.remove('active');
+            if (button.getAttribute('data-filter') === filterFromUrl) {
+                button.classList.add('active');
+            }
+        });
     
         // Filter funksjonalitet
         document.querySelectorAll('.portfolio-filter button').forEach(button => {
@@ -198,7 +195,9 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
                 const filter = button.getAttribute('data-filter');
                 applyFilter(filter);
                 // Oppdater URL med valgt filter
-                window.history.pushState({}, '', `portfolio.html?filter=${filter}`);
+                const newUrl = new URL(window.location.href);
+                newUrl.searchParams.set('filter', filter);
+                window.history.pushState({}, '', newUrl);
                 // Marker den aktive filterknappen
                 document.querySelectorAll('.portfolio-filter button').forEach(btn => {
                     btn.classList.remove('active');
