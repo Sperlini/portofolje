@@ -682,8 +682,9 @@ a h3 {
 
 /* Hvis du trenger å legge til spesifikke stiler for tekst i portefølje headeren */
 .portfolio-header h1 {
-    margin: 60px; /* Fjerner margin for å sikre at teksten er sentrert */
+     /* Fjerner margin for å sikre at teksten er sentrert */
     font-size: 5rem;
+    padding-top: 4rem;
 }
 
 
