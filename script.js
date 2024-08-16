@@ -174,35 +174,47 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
             });
         }
     
+        // Funksjon for å oppdatere aktiv knapp
+        function updateActiveButton(filter) {
+            document.querySelectorAll('.portfolio-filter button').forEach(button => {
+                button.classList.remove('active');
+                if (button.getAttribute('data-filter') === filter) {
+                    button.classList.add('active');
+                }
+            });
+        }
+    
         // Hent filter fra URL
         const urlParams = new URLSearchParams(window.location.search);
         const filterFromUrl = urlParams.get('filter') || 'all';
     
         // Bruk filter fra URL ved last av siden
         applyFilter(filterFromUrl);
-    
-        // Marker den aktive filterknappen
-        document.querySelectorAll('.portfolio-filter button').forEach(button => {
-            button.classList.remove('active');
-            if (button.getAttribute('data-filter') === filterFromUrl) {
-                button.classList.add('active');
-            }
-        });
+        updateActiveButton(filterFromUrl);
     
         // Filter funksjonalitet
         document.querySelectorAll('.portfolio-filter button').forEach(button => {
             button.addEventListener('click', () => {
                 const filter = button.getAttribute('data-filter');
-                applyFilter(filter);
-                // Oppdater URL med valgt filter
-                const newUrl = new URL(window.location.href);
-                newUrl.searchParams.set('filter', filter);
-                window.history.pushState({}, '', newUrl);
-                // Marker den aktive filterknappen
-                document.querySelectorAll('.portfolio-filter button').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                button.classList.add('active');
+    
+                // Sjekk om den valgte knappen allerede er aktiv
+                if (button.classList.contains('active')) {
+                    // Hvis aktiv, vis alle og sett filter til "all"
+                    applyFilter('all');
+                    updateActiveButton('all');
+                    // Oppdater URL med filter "all"
+                    const newUrl = new URL(window.location.href);
+                    newUrl.searchParams.set('filter', 'all');
+                    window.history.pushState({}, '', newUrl);
+                } else {
+                    // Hvis ikke aktiv, bruk det valgte filteret
+                    applyFilter(filter);
+                    updateActiveButton(filter);
+                    // Oppdater URL med valgt filter
+                    const newUrl = new URL(window.location.href);
+                    newUrl.searchParams.set('filter', filter);
+                    window.history.pushState({}, '', newUrl);
+                }
             });
         });
     

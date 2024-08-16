@@ -589,6 +589,10 @@ footer p {
     font-size: 18px;
     
 }
+.portfolio-filter button.active {
+    background-color: #f77912; /* Farge for aktiv knapp, endre til ønsket */
+    color: white;
+}
 
 
 
