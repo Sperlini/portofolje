@@ -163,60 +163,51 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
     });
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Helper function to get URL parameter
-        function getURLParameter(name) {
-            return new URLSearchParams(window.location.search).get(name);
+        // Hent filter fra URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const filterFromUrl = urlParams.get('filter');
+    
+        // Funksjon for å anvende filteret
+        function applyFilter(filter) {
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         }
     
-        // Get filter from URL parameter or default to 'all'
-        let activeFilter = getURLParameter('filter') || 'all';
-    
-        // Set the active filter button
-        document.querySelectorAll('.portfolio-filter button').forEach(button => {
-            const filter = button.getAttribute('data-filter');
-    
-            if (filter === activeFilter) {
-                button.classList.add('active');
-            } else {
+        // Bruk filter fra URL ved last av siden
+        if (filterFromUrl) {
+            applyFilter(filterFromUrl);
+            // Marker den aktive filterknappen
+            document.querySelectorAll('.portfolio-filter button').forEach(button => {
                 button.classList.remove('active');
-            }
-    
-            button.addEventListener('click', () => {
-                const newFilter = button.getAttribute('data-filter');
-    
-                if (newFilter === activeFilter) {
-                    // If the active button is clicked again, reset to show all
-                    activeFilter = 'all';
-                    history.pushState(null, '', 'portfolio.html'); // Reset URL
-                    document.querySelectorAll('.portfolio-filter button').forEach(btn => btn.classList.remove('active'));
-                    document.querySelectorAll('.portfolio-item').forEach(item => item.style.display = 'block');
-                } else {
-                    // Otherwise, filter as usual
-                    activeFilter = newFilter;
-                    history.pushState(null, '', `portfolio.html?filter=${newFilter}`);
-                    document.querySelectorAll('.portfolio-filter button').forEach(btn => btn.classList.remove('active'));
+                if (button.getAttribute('data-filter') === filterFromUrl) {
                     button.classList.add('active');
-                    document.querySelectorAll('.portfolio-item').forEach(item => {
-                        if (newFilter === 'all' || item.getAttribute('data-category') === newFilter) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
                 }
+            });
+        } else {
+            applyFilter('all'); // Vis alle som standard
+        }
+    
+        // Filter funksjonalitet
+        document.querySelectorAll('.portfolio-filter button').forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                applyFilter(filter);
+                // Oppdater URL med valgt filter
+                window.history.pushState({}, '', `portfolio.html?filter=${filter}`);
+                // Marker den aktive filterknappen
+                document.querySelectorAll('.portfolio-filter button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
             });
         });
     
-        // Apply initial filter
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            if (activeFilter === 'all' || item.getAttribute('data-category') === activeFilter) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    
-        // Project details functionality
+        // Prosjekt detaljer funksjonalitet
         document.querySelectorAll('.portfolio-item').forEach(item => {
             item.addEventListener('click', () => {
                 const details = item.querySelector('.project-details');
