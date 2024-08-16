@@ -546,8 +546,8 @@ footer p {
 
 .text-content {
     flex: 1 1 50%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 60% */
-    padding-right: 4vh;
-    padding-left: 4vh;
+    padding-right: 1.5vh;
+    padding-left: 1.5vh;
     text-align: center;
 }
 
@@ -569,8 +569,15 @@ footer p {
     -10px -10px 10px white; 
 }
 
+a {
+    text-decoration: none;
+    color: #e60000;
+}
 
-
+a h3 {
+    text-decoration: none;
+    color: white;
+}
 
 
 .portfolio-filter {
@@ -605,7 +612,7 @@ footer p {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    height: 100vh;
+   
 }
 
 .portfolio-item {
@@ -733,6 +740,9 @@ footer p {
         min-width: 30%; /* 100% / 4 visible slides */
     }
 
+    .portfolio-filter{
+        display: grid;
+    }
     
     
 }
