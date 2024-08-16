@@ -53,8 +53,8 @@ header .overlay {
 
 header .text {
     width: 100%;
-    text-align: left;
-    padding: 0 20px;
+    text-align: right;
+    padding: 0 50px;
     pointer-events: none;
     opacity: 0;
     animation: startfade 1s ease-in 0.02s;
@@ -63,10 +63,10 @@ header .text {
 }
 
 header .text h1 {
-    font-size: 8rem;
+    font-size: 3.815rem;
     color: white;
     padding-left: 20vh;
-    background: linear-gradient(to right, #FFDDC1, #f7a87b);
+    background: linear-gradient(to right, #FFDDC1, #f7a87b, #e60000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     pointer-events: none;
@@ -143,10 +143,20 @@ header .text h1 {
         transform: translateY(0);
     }
 }
+@keyframes fagom4 {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 
 header .text h2 {
-    font-size: 1.5rem;
+    font-size: 3.052rem;
     color: white;
     padding-left: 25vh;
 }
@@ -198,24 +208,27 @@ nav {
     width: 100%;
     background-color: rgba(255, 255, 255, 0); /* Gjør bakgrunnen litt gjennomsiktig */
     z-index: 3; /* Sørg for at nav ligger over headeren */
+    
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     list-style: none;
     margin: 0;
-    padding: 10px 0;
+    padding: 12px 0;
 }
 
 nav ul li {
-    margin: 0 15px; /* Margin mellom meny elementer */
+    margin: 0 24px; /* Margin mellom meny elementer */
 }
 
 nav ul li a {
     color: #ffffff; /* Endret fra hvit for bedre kontrast mot hvit bakgrunn */
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 0 30px;
+    font-size: 1rem;
+
 }
 
 nav ul li a:hover {
@@ -273,7 +286,7 @@ section h1.visible {
 }
 #om-meg h1{
     font-size: 80px;
-    padding-bottom: 1rem;
+    padding-bottom: rem;
     margin: 0;
 }
 #om-meg img {
@@ -333,9 +346,13 @@ section h1.visible {
      box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    
     
     
 }
+
 .fagfelt h1 {
     background-color: #FFABAB;
     writing-mode: vertical-lr;
@@ -357,13 +374,13 @@ section h1.visible {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     transform: translateY(100px); /* Start off-screen */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
     opacity: 0;
+    padding-right: 50vh;
     
  
     
@@ -379,7 +396,13 @@ section h1.visible {
     opacity: 0;
     animation: fagom 2s linear;
 }
-
+.fagfelt .h3-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+    
+}
 
 .fagfelt h2.animate {
     opacity: 1;
@@ -391,6 +414,22 @@ section h1.visible {
     opacity: 1;
     transform: translateY(0);
 }
+.fagfelt h4.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fagfelt h4 {
+    color: #FFDDC1;
+    background-color: #f86565;
+    width: 100%;
+    align-content: space-around;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fagom4 2s linear;
+}
+
 
 
 @keyframes slide {
@@ -411,6 +450,47 @@ section h1.visible {
     }
 }
 
+.nyligpro-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Avstand mellom boksene */
+    margin-bottom: 20vh;
+}
+
+.nyligpro-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    width: calc(50% - 20px); /* Tre bokser ved siden av hverandre, juster etter behov */
+    max-width: 300px; /* Maks bredde for hver boks */
+    box-sizing: border-box;
+}
+
+.image-container {
+    width: 100%;
+
+}
+
+.nyligpro-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nyligpro-box p {
+    padding: 4px;
+    margin: 0;
+    color: white;
+}
+.nyligpro-box h3 {
+    color:white;
+}
+ 
 
 footer {
     position: fixed;
@@ -459,7 +539,8 @@ footer p {
     border-radius: 5px;
     margin-bottom: 20px;
     height: 25vh;
-    
+    padding: 8px 8px 2px;
+        
     
 }
 
@@ -478,7 +559,9 @@ footer p {
     width: 100%; /* Sikrer at bildet fyller containerens bredde */
     height: auto;
     object-fit: cover;
-    height: 25vh;
+    height: 23vh;
+    border-radius: 5px;
+    
 }
 
 .content-wrapper:hover{
@@ -487,6 +570,110 @@ footer p {
 }
 
 
+
+
+
+.portfolio-filter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolio-filter button {
+    margin: 14px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #FFDDC1, #f7a87b, #e60000);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.portfolio-filter button{
+    background-color: white;
+}
+
+.portfolio-filter button:hover {
+    background-color: #555;
+}
+
+.portfolio-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    height: 100vh;
+}
+
+.portfolio-item {
+    position: relative;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.portfolio-item p {
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.project-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.project-details img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.project-details h2 {
+    margin-top: 0;
+}
+
+.project-details.visible {
+    display: block;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+
+.overlay.visible {
+    display: block;
+}
+.portfolio-header {
+    background: linear-gradient(to right, #FFDDC1, #f7a87b, #e60000);
+    color: white; /* Hvit tekstfarge */
+    text-align: center; /* Sentralisert tekst */
+    padding: 20px 0; /* Øvre og nedre padding */
+    font-size: 2em; /* Større tekststørrelse */
+
+}
+
+/* Hvis du trenger å legge til spesifikke stiler for tekst i portefølje headeren */
+.portfolio-header h1 {
+    margin: 60px; /* Fjerner margin for å sikre at teksten er sentrert */
+    font-size: 5rem;
+}
 
 
 
@@ -499,6 +686,7 @@ footer p {
         padding: 0 50px;
         text-align: left; /* Plasser teksten til venstre */
         box-sizing: border-box; /* Sørg for at padding er inkludert i bredden */
+        
     }
     header .text h1 {
         font-size: 3.5rem; /* Juster font-størrelsen */
@@ -506,7 +694,7 @@ footer p {
         padding-left: 20px;
     }
     header .text h2 {
-        font-size: 1rem; /* Juster font-størrelsen */
+        font-size: 1.5rem; /* Juster font-størrelsen */
         margin-left: 0; /* Fjerner eventuell venstre margin */
         padding-left: 40px;
     }
@@ -524,7 +712,7 @@ footer p {
     }
 
     #om-meg h1 {
-        font-size: 70px;
+        font-size: 3.5rem;
         
     }
     #om-meg p {

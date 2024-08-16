@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 3000); // Adjust the interval as needed
 });
 
-const boxes = document.querySelectorAll('.box');
+const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
     window.addEventListener('scroll', function() {
         let currentColorClass = '';
 
@@ -123,26 +123,113 @@ const boxes = document.querySelectorAll('.box');
     });
 
     document.addEventListener("DOMContentLoaded", function() {
-        // Select all elements you want to observe
-        const elements = document.querySelectorAll('.fagfelt h1 .fagfelt h2');
+        const elements = document.querySelectorAll('.fagfelt h1, .fagfelt h2, .fagfelt h3');
     
-        // Options for the IntersectionObserver
-        const options = {
-            threshold: 0.1 // Trigger when 10% of the element is visible
-        };
+        let animationFrameId;
     
-        // Create a new IntersectionObserver instance
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate'); // Add class to trigger the CSS animation
-                    observer.unobserve(entry.target); // Stop observing once the animation has been triggered
+        function updateAnimations() {
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const elementTop = rect.top + window.scrollY;
+                const scrollPosition = window.scrollY + window.innerHeight;
+                const elementHeight = rect.height;
+    
+                if (scrollPosition > elementTop && scrollPosition < elementTop + elementHeight) {
+                    const scrollFraction = (scrollPosition - elementTop) / elementHeight;
+                    element.style.opacity = scrollFraction; // Fade in/out based on scroll position
+                    element.style.transform = `translateY(${(1 - scrollFraction) * 50}px)`; // Move element based on scroll position
                 }
             });
-        }, options);
     
-        // Start observing each element
-        elements.forEach(element => {
-            observer.observe(element);
+            // Continue to request animation frame for smooth updates
+            animationFrameId = requestAnimationFrame(updateAnimations);
+        }
+    
+        function onScroll() {
+            // Cancel the previous animation frame to avoid redundant calls
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            // Request a new animation frame
+            animationFrameId = requestAnimationFrame(updateAnimations);
+        }
+    
+        // Update animations on scroll and resize
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('resize', onScroll);
+    
+        // Initial update
+        updateAnimations();
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Helper function to get URL parameter
+        function getURLParameter(name) {
+            return new URLSearchParams(window.location.search).get(name);
+        }
+    
+        // Get filter from URL parameter or default to 'all'
+        let activeFilter = getURLParameter('filter') || 'all';
+    
+        // Set the active filter button
+        document.querySelectorAll('.portfolio-filter button').forEach(button => {
+            const filter = button.getAttribute('data-filter');
+    
+            if (filter === activeFilter) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+    
+            button.addEventListener('click', () => {
+                const newFilter = button.getAttribute('data-filter');
+    
+                if (newFilter === activeFilter) {
+                    // If the active button is clicked again, reset to show all
+                    activeFilter = 'all';
+                    history.pushState(null, '', 'portfolio.html'); // Reset URL
+                    document.querySelectorAll('.portfolio-filter button').forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.portfolio-item').forEach(item => item.style.display = 'block');
+                } else {
+                    // Otherwise, filter as usual
+                    activeFilter = newFilter;
+                    history.pushState(null, '', `portfolio.html?filter=${newFilter}`);
+                    document.querySelectorAll('.portfolio-filter button').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    document.querySelectorAll('.portfolio-item').forEach(item => {
+                        if (newFilter === 'all' || item.getAttribute('data-category') === newFilter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    
+        // Apply initial filter
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            if (activeFilter === 'all' || item.getAttribute('data-category') === activeFilter) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    
+        // Project details functionality
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const details = item.querySelector('.project-details');
+                const overlay = document.createElement('div');
+                overlay.classList.add('overlay', 'visible');
+                document.body.appendChild(overlay);
+    
+                details.classList.add('visible');
+    
+                overlay.addEventListener('click', () => {
+                    details.classList.remove('visible');
+                    document.body.removeChild(overlay);
+                });
+            });
         });
     });
