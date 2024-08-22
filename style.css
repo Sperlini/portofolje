@@ -705,6 +705,34 @@ a h3 {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 1000;
 }
+.project-tags {
+    position: absolute; /* Plasserer elementet oppe til høyre */
+    top: -100px; /* Avstand fra toppen */
+    right: 20px; /* Avstand fra høyre kant */
+    background-color: transparent; /* Bakgrunnsfarge for å skille det fra resten */
+    border-radius: 5px; /* Avrundede hjørner */
+    padding: 10px; /* Padding for innholdet */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.589); /* Lett skygge for å løfte det fra bakgrunnen */
+    z-index: 10; /* Sørg for at det vises over andre elementer */
+}
+
+
+
+.project-tags ul {
+    list-style: none; /* Fjern punkttegn */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.project-tags ul li {
+    /* Avstand mellom elementer */
+    font-size: 40px; /* Juster fontstørrelsen etter behov */
+    color: white;
+}
+
 
 .project-description {
     flex: 1;
@@ -762,10 +790,11 @@ a h3 {
 .slideshow-controls button {
     background-color: #f7a87b;
     color: white;
-    border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 18px;
+    border-color: red;
+
 }
 
 .show-controls button:hover {
@@ -795,7 +824,7 @@ a h3 {
 
 .thumbnail {
     width: 300px; /* Juster størrelse som ønsket */
-    height: 300px;
+    height: 250px;
     cursor: pointer;
     border: 2px solid #f7a87b;
     border-radius: 10px;
