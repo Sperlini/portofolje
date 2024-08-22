@@ -236,7 +236,6 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
         });
     });
 
-    // Get modal element and image elements
     document.addEventListener('DOMContentLoaded', function() {
         const slides = document.querySelectorAll('.slides');
         let currentSlide = 0;
@@ -317,18 +316,6 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
         // Initial display of the first slide
         showSlide(currentSlide);
     });
-
-document.querySelector('.project-slideshow').addEventListener('touchstart', (event) => {
-    touchStartX = event.changedTouches[0].screenX;
-});
-
-document.querySelector('.project-slideshow').addEventListener('touchend', (event) => {
-    touchEndX = event.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-// Show the first slide initially
-showSlide(currentSlide);
 
 
       // Get modal element and image elements
