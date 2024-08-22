@@ -227,7 +227,7 @@ nav ul li a {
     color: #ffffff; /* Endret fra hvit for bedre kontrast mot hvit bakgrunn */
     text-decoration: none;
     padding: 0 50px;
-    font-size: 1rem;
+    font-size: 25px;
 
 }
 
@@ -707,8 +707,8 @@ a h3 {
 }
 .project-tags {
     position: absolute; /* Plasserer elementet oppe til høyre */
-    top: -100px; /* Avstand fra toppen */
-    right: 20px; /* Avstand fra høyre kant */
+    top: -90px; /* Avstand fra toppen */
+    right: -2.5px; /* Avstand fra høyre kant */
     background-color: transparent; /* Bakgrunnsfarge for å skille det fra resten */
     border-radius: 5px; /* Avrundede hjørner */
     padding: 10px; /* Padding for innholdet */
@@ -733,6 +733,22 @@ a h3 {
     color: white;
 }
 
+.color-palette {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    top: -85px; /* Avstand fra toppen */
+    right: 510px;
+}
+
+.color-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+   
+}
+
 
 .project-description {
     flex: 1;
@@ -742,6 +758,7 @@ a h3 {
 .project-slideshow {
     flex: 1;
     position: relative;
+    overflow: hidden;
 }
 
 .project-slideshow img {
@@ -774,13 +791,13 @@ a h3 {
 .slides {
     position: relative;
     overflow: hidden;
-}
-
-.slides {
     display: none; /* Skjul alle bilder */
     width: 100%;
     height: auto;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none; 
 }
+
 
 .slides.active {
     display: block; /* Vis bare det aktive bildet */
@@ -792,7 +809,7 @@ a h3 {
     color: white;
     padding: 10px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 25px;
     border-color: red;
 
 }
