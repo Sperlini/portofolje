@@ -236,29 +236,56 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const slides = document.querySelectorAll('.slides');
-        let currentSlide = 0;
-    
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
+    // Get modal element and image elements
+const slides = document.querySelectorAll('.slides');
+let currentSlide = 0;
+
+const showSlide = (index) => {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
         }
-    
-        document.getElementById('next-slide').addEventListener('click', function() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
-    
-        document.getElementById('prev-slide').addEventListener('click', function() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        });
-    
-        // Initialiser ved å vise første slide
-        showSlide(currentSlide);
     });
+};
+
+const nextSlide = () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+};
+
+const prevSlide = () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+};
+
+// Event listeners for buttons
+document.getElementById('next-slide').addEventListener('click', nextSlide);
+document.getElementById('prev-slide').addEventListener('click', prevSlide);
+
+// Swipe detection
+let touchStartX = 0;
+let touchEndX = 0;
+
+const handleSwipe = () => {
+    if (touchEndX < touchStartX) {
+        nextSlide(); // Swipe left
+    } else if (touchEndX > touchStartX) {
+        prevSlide(); // Swipe right
+    }
+};
+
+document.querySelector('.project-slideshow').addEventListener('touchstart', (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+});
+
+document.querySelector('.project-slideshow').addEventListener('touchend', (event) => {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+// Show the first slide initially
+showSlide(currentSlide);
 
 
       // Get modal element and image elements
