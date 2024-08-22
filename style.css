@@ -818,14 +818,12 @@ a h3 {
 .modal {
     display: none; /* Skjult som standard */
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.849);
-    display: flex;
     justify-content: center;
     align-items: center; /* Vertikal sentrering */
     z-index: 1001;
@@ -853,6 +851,7 @@ a h3 {
 .close:hover {
     color: #e60000;
 }
+
 
 @media (max-width: 768px) {
     header {
