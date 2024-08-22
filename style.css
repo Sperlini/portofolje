@@ -687,7 +687,172 @@ a h3 {
     padding-top: 4rem;
 }
 
+.project-detailss {
+    
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.219);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.253);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
 
+.project-description {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.project-slideshow {
+    flex: 1;
+    position: relative;
+}
+
+.project-slideshow img {
+    width: 800px;
+    height: 500px;
+    border-radius: 5px;
+    object-fit:cover;
+
+}
+.project-slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 800px;  /* bilderamme */
+    margin: auto;
+}
+
+.slideshow-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slideshow-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+.slides {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    display: none; /* Skjul alle bilder */
+    width: 100%;
+    height: auto;
+}
+
+.slide.active {
+    display: block; /* Vis bare det aktive bildet */
+}
+
+.slideshow-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slideshow-controls button {
+    background-color: #f7a87b;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.slideshow-controls button:hover {
+    background-color: #e60000;
+}
+
+.gallery {
+    margin-top: 20px;
+    background: linear-gradient(to right, #ffddc100, #f7a97b00, #e6000000);
+    
+}
+
+.gallery h2 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    background-color:
+}
+
+.thumbnail {
+    width: 300px; /* Juster størrelse som ønsket */
+    height: 300px;
+    cursor: pointer;
+    border: 2px solid #f7a87b;
+    border-radius: 5px;
+}
+
+.thumbnail:hover {
+    opacity: 0.8;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Skjult som standard */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.849);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertikal sentrering */
+    z-index: 1001;
+}
+.modal-content {
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e60000;
+}
 
 @media (max-width: 768px) {
     header {
@@ -747,6 +912,7 @@ a h3 {
     
     
 }
+
 
 
 

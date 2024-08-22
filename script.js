@@ -235,3 +235,53 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
             });
         });
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+    
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+    
+        document.getElementById('next-slide').addEventListener('click', function() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+    
+        document.getElementById('prev-slide').addEventListener('click', function() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+    
+        // Initialiser ved å vise første slide
+        showSlide(currentSlide);
+    });
+
+
+      // Get modal element and image elements
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const closeBtn = document.getElementsByClassName('close')[0];
+
+// Add click event listener to all thumbnails
+document.querySelectorAll('.thumbnail').forEach(img => {
+    img.addEventListener('click', function() {
+        modal.style.display = 'flex'; // Change to 'flex' to use flexbox centering
+        modalImg.src = this.src;
+    });
+});
+
+// Add click event listener to close button
+closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+// Close modal when clicking outside of the image
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});

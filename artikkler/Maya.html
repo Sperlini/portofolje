@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosjektdetaljer</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background: linear-gradient(to right, #FFDDC1, #f7a87b, #e60000);">
+    <nav>
+        
+        <ul>
+            <li class="lato-bold"><a href="index.html">Hjem</a></li>
+            <li class="lato-bold"><a href="portfolio.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="project-header">
+        <div class="logo-container">
+            <a href="/index.html">
+                <img src="/logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-detailss">
+            <div class="project-description">
+                <h2>Prosjektbeskrivelse</h2>
+                <p>   Dette prosjektet tar for seg utviklingen av en ny nettside for en klient. Prosjektet
+                    innebar design, utvikling, testing og implementering av en fullstendig responsiv nettside.
+                    Prosjektet bruker teknologier som HTML, CSS, JavaScript og React. Nettsiden ble også optimalisert
+                    for søkemotorer og lastetid.</p>
+            </div>
+
+            <div class="project-slideshow">
+                <img src="/image1.jpg" alt="Prosjektbilde 1" class="slide active">
+                <img src="/image2.jpg" alt="Prosjektbilde 2" class="slide">
+                <img src="/image3.png" alt="Prosjektbilde 3" class="slide">
+                <!-- Flere bilder -->
+                <div class="slideshow-controls">
+                    <button id="prev-slide">&#10094;</button>
+                    <button id="next-slide">&#10095;</button>
+                </div>
+            </div>
+
+           
+           
+        </section>
+
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div>
+              
+                <div class="gallery-grid">
+                    
+                    <img src="/image1.jpg" alt="Thumbnail 1" class="thumbnail">
+                    <img src="/gametitle.jpg" alt="Thumbnail 2" class="thumbnail">
+                    <img src="/image1.jpg" alt="Thumbnail 3" class="thumbnail">
+                    <img src="/image1.jpg" alt="Thumbnail 4" class="thumbnail">
+                    <!-- Flere små bilder -->
+                </div>
+        </section>
+        <!-- Modal for å vise stort bilde -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+    </main>
+
+    <footer>
+        <p class="lato-light">&copy; Ditt navn eller firma</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
