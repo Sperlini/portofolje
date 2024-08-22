@@ -237,43 +237,86 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
     });
 
     // Get modal element and image elements
-const slides = document.querySelectorAll('.slides');
-let currentSlide = 0;
-
-const showSlide = (index) => {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.slides');
+        let currentSlide = 0;
+        let startX = 0;
+        let endX = 0;
+        let isDragging = false;
+    
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
         }
+    
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+    
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+    
+        // Event listeners for buttons
+        document.getElementById('next-slide').addEventListener('click', nextSlide);
+        document.getElementById('prev-slide').addEventListener('click', prevSlide);
+    
+        // Swipe and Drag functionality
+        slides.forEach(slide => {
+            // Disable default image dragging
+            slide.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+    
+            // Mouse events for dragging on desktop
+            slide.addEventListener('mousedown', (e) => {
+                startX = e.clientX;
+                isDragging = true;
+            });
+    
+            slide.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    endX = e.clientX;
+                }
+            });
+    
+            slide.addEventListener('mouseup', (e) => {
+                isDragging = false;
+                if (endX !== 0) {
+                    if (endX < startX - 50) {
+                        nextSlide();
+                    } else if (endX > startX + 50) {
+                        prevSlide();
+                    }
+                }
+                endX = 0;
+            });
+    
+            // Touch events for swiping on mobile
+            slide.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+    
+            slide.addEventListener('touchmove', (e) => {
+                endX = e.touches[0].clientX;
+            });
+    
+            slide.addEventListener('touchend', (e) => {
+                if (endX < startX - 50) {
+                    nextSlide();
+                } else if (endX > startX + 50) {
+                    prevSlide();
+                }
+                endX = 0;
+            });
+        });
+    
+        // Initial display of the first slide
+        showSlide(currentSlide);
     });
-};
-
-const nextSlide = () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-};
-
-const prevSlide = () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-};
-
-// Event listeners for buttons
-document.getElementById('next-slide').addEventListener('click', nextSlide);
-document.getElementById('prev-slide').addEventListener('click', prevSlide);
-
-// Swipe detection
-let touchStartX = 0;
-let touchEndX = 0;
-
-const handleSwipe = () => {
-    if (touchEndX < touchStartX) {
-        nextSlide(); // Swipe left
-    } else if (touchEndX > touchStartX) {
-        prevSlide(); // Swipe right
-    }
-};
 
 document.querySelector('.project-slideshow').addEventListener('touchstart', (event) => {
     touchStartX = event.changedTouches[0].screenX;
