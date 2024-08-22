@@ -237,7 +237,7 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
     });
 
     document.addEventListener("DOMContentLoaded", function() {
-        const slides = document.querySelectorAll('.slide');
+        const slides = document.querySelectorAll('.slides');
         let currentSlide = 0;
     
         function showSlide(index) {
