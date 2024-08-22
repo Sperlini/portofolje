@@ -739,14 +739,7 @@ a h3 {
     transform: translateY(-50%);
 }
 
-.slideshow-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
+
 
 
 
@@ -755,20 +748,16 @@ a h3 {
     overflow: hidden;
 }
 
-.slide {
+.slides {
     display: none; /* Skjul alle bilder */
     width: 100%;
     height: auto;
 }
 
-.slide.active {
+.slides.active {
     display: block; /* Vis bare det aktive bildet */
 }
 
-.slideshow-controls {
-    text-align: center;
-    margin-top: 10px;
-}
 
 .slideshow-controls button {
     background-color: #f7a87b;
@@ -779,7 +768,7 @@ a h3 {
     font-size: 18px;
 }
 
-.slideshow-controls button:hover {
+.show-controls button:hover {
     background-color: #e60000;
 }
 
@@ -797,18 +786,21 @@ a h3 {
 .gallery-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 13px;
     justify-content: center;
-    background-color:
+   
 }
+
+
 
 .thumbnail {
     width: 300px; /* Juster størrelse som ønsket */
     height: 300px;
     cursor: pointer;
     border: 2px solid #f7a87b;
-    border-radius: 5px;
+    border-radius: 10px;
 }
+
 
 .thumbnail:hover {
     opacity: 0.8;
