@@ -198,6 +198,8 @@ header .logo-container img {
     height: auto; /* Behold proporsjoner av logoen */
     max-width: 20vh;
     max-height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none; 
 }
 
 /* Navigasjonsstil */
@@ -333,6 +335,11 @@ section h1.visible {
     display: block;
     height: auto;
 }
+
+.project-details.visible {
+    display: block;
+}
+   
 
 .slide p {
     padding-left: 1.2vh;
@@ -616,20 +623,23 @@ a h3 {
 }
 
 .portfolio-item {
-    position: relative;
-    width: calc(25% - 20px);
-    box-sizing: border-box;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column; /* Plasserer barn i en kolonne (vertikal retning) */
+    align-items: center; /* Sentraliserer barn horisontalt */
+    width: 250px; /* Samme bredde for alle elementer */
 }
 
 .portfolio-item img {
     width: 100%;
     border-radius: 5px;
+    max-width: 250px;
+    max-height: 250px;
 }
 
 .portfolio-item p {
     text-align: center;
-    margin: 10px 0 0 0;
+    margin: 15px 0 0 0;
+    width: 100%; /* Sørger for at teksten tar samme bredde som bildet */
 }
 
 .project-details {
@@ -642,20 +652,28 @@ a h3 {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 1000;
+   
 }
 
 .project-details img {
-    max-width: 100%;
-    margin-top: 10px;
+  
+    margin-top: 20px;
+    width: 450px;
+    height: 450px;
+    display: block; /* Gjør bildet til en blokk for at margin auto skal fungere */
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 .project-details h2 {
     margin-top: 0;
 }
 
-.project-details.visible {
-    display: block;
+.project-details p {
+    font-size: 20px;
+    text-align:left;
 }
+
 
 .overlay {
     display: none;
@@ -714,6 +732,7 @@ a h3 {
     padding: 10px; /* Padding for innholdet */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.589); /* Lett skygge for å løfte det fra bakgrunnen */
     z-index: 10; /* Sørg for at det vises over andre elementer */
+    
 }
 
 
@@ -724,7 +743,7 @@ a h3 {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px;
 }
 
 .project-tags ul li {
@@ -738,14 +757,16 @@ a h3 {
     display: flex;
     gap: 10px;
     top: -85px; /* Avstand fra toppen */
-    right: 510px;
+    right: 10px;
+    
 }
 
 .color-box {
     width: 70px;
     height: 70px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc; */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.589);
    
 }
 
@@ -754,6 +775,13 @@ a h3 {
     flex: 1;
     margin-right: 20px;
 }
+
+.project-description p {
+    
+    font-size: 20px;
+    padding-top: 10px;
+}
+
 
 .project-slideshow {
     flex: 1;
@@ -766,6 +794,8 @@ a h3 {
     height: 500px;
     border-radius: 5px;
     object-fit:cover;
+    
+    
 
 }
 .project-slideshow {
@@ -782,9 +812,8 @@ a h3 {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+   
 }
-
-
 
 
 
@@ -811,6 +840,8 @@ a h3 {
     cursor: pointer;
     font-size: 25px;
     border-color: red;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none; 
 
 }
 
@@ -841,7 +872,7 @@ a h3 {
 
 .thumbnail {
     width: 300px; /* Juster størrelse som ønsket */
-    height: 250px;
+    height: 200px;
     cursor: pointer;
     border: 2px solid #f7a87b;
     border-radius: 10px;
@@ -868,12 +899,13 @@ a h3 {
 }
 .modal-content {
     width: 80%;
-    max-width: 700px;
+    max-width: 1000px;
     height: auto;
     border-radius: 10px;
     background-color: #fff;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-height: 800px;
 }
 
 .close {
@@ -890,6 +922,50 @@ a h3 {
     color: #e60000;
 }
 
+.fileroglink {
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.589);
+    
+    
+}
+
+.fileroglink h2 {
+   
+    padding-bottom: 20px;
+    
+}
+
+@media (max-width: 1400px) {
+
+    .project-slideshow img {
+        width: 500px;
+        height: 400px;
+       
+        
+    }
+
+    #om-meg p {
+        font-size: 15px;
+    }
+    #om-meg img {
+       
+        max-width: 30vh;
+       
+    }
+    #om-meg h1 {
+        font-size: 45px; 
+    }
+}
+
+@media (max-width: 1000px) {
+    .project-slideshow img {
+        max-width: 380px;
+    }
+
+    #om-meg h1 {
+        font-size: 45px; 
+    }
+}
 
 @media (max-width: 768px) {
     header {
@@ -926,7 +1002,8 @@ a h3 {
     }
 
     #om-meg h1 {
-        font-size: 3.5rem;
+
+        font-size: 45px;
         
     }
     #om-meg p {
@@ -947,6 +1024,12 @@ a h3 {
         display: grid;
     }
     
+   
+    .project-slideshow img {
+        width: 250px;
+        height: 300px;
+        
+    }
     
 }
 
@@ -972,7 +1055,23 @@ a h3 {
     background-color: #f87878; /* Light coral */
 }
 
+.colorklatring1 {
+    background-color: #046838; /* Light peach */
+}
 
+.colorklatring2 {
+    background-color: #8CC440; /* Light salmon */
+}
+
+.colorklatring {
+   
+    background-color: #bd393900; /* Light coral */
+}
+
+.colorklatring4 {
+   
+    background-color: #FCFCFC; /* Light coral */
+}
 
 
 
