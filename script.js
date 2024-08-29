@@ -318,27 +318,28 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
     });
 
 
-      // Get modal element and image elements
-const modal = document.getElementById('imageModal');
-const modalImg = document.getElementById('modalImage');
-const closeBtn = document.getElementsByClassName('close')[0];
-
-// Add click event listener to all thumbnails
-document.querySelectorAll('.thumbnail').forEach(img => {
-    img.addEventListener('click', function() {
-        modal.style.display = 'flex'; // Change to 'flex' to use flexbox centering
-        modalImg.src = this.src;
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption'); // Hent elementet for bildeteksten
+    const closeBtn = document.getElementsByClassName('close')[0];
+    
+    // Legg til klikkhendelse for alle miniatyrbilder
+    document.querySelectorAll('.thumbnail').forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = 'flex'; // Endre til 'flex' for å bruke flexbox sentrering
+            modalImg.src = this.src;
+            modalCaption.textContent = this.alt; // Sett bildeteksten til alt-teksten
+        });
     });
-});
-
-// Add click event listener to close button
-closeBtn.addEventListener('click', function() {
-    modal.style.display = 'none';
-});
-
-// Close modal when clicking outside of the image
-window.addEventListener('click', function(event) {
-    if (event.target === modal) {
+    
+    // Legg til klikkhendelse for lukk-knappen
+    closeBtn.addEventListener('click', function() {
         modal.style.display = 'none';
-    }
-});
+    });
+    
+    // Lukk modal når man klikker utenfor bildet
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });

@@ -512,6 +512,10 @@ footer {
     opacity: 1; /* Start synlig */
     transform: translateY(0); /* Start synlig */
     z-index: 4; /* Sørg for at fotnoten ligger over headeren og nav */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
 }
 
 footer.hidden {
@@ -526,7 +530,16 @@ footer.visible {
 
 footer p {
     margin: 0;
+    font-size: 30px;
 }
+
+footer i {
+    font-size: 24px; /* Størrelse på ikonene */
+    margin-right: 8px; /* Litt mellomrom mellom ikon og tekst */
+    color: white; /* Ikonfarge */
+}
+
+
 
 
 
@@ -902,7 +915,7 @@ a h3 {
     right: 0;
     bottom: 0;
     background: linear-gradient(0deg, #e92b2b 0%, rgba(32, 22, 233, 0) 50%, #e6765a 100%); /* Definerer gradienten */
-    background: -webkit-linear-gradient(0deg, #e03737 0, rgba(32, 31, 49, 0) 50%, #f89a63 100%);
+    background: -webkit-linear-gradient(10deg, #e03737 0%, rgba(32, 31, 49, 0) 50%, #f89a63 100%);
     z-index: 2; /* Sørger for at gradienten ligger over bildet */
     pointer-events: none; /* Sørger for at pseudo-elementet ikke blokkerer museklikk på bildet */
     border-radius: 1.5rem; /* Sørger for at pseudo-elementet følger bildets runde kanter */
@@ -963,14 +976,45 @@ a h3 {
 }
 
 .fixed-text p {
-    max-width: 60%;
+    max-width: 40%;
     line-height: 1.6;
+    text-shadow: rgb(0, 0, 0) 3px 0 20px;
+    font-size: 1.2rem;
 }
 .title-line {
     display: block; /* Ensure each line is on a new line */
 }
 
+.middle-text {
+    margin-top: 200px;
+    background-color: rgb(231, 81, 81);
+    display: flex; /* Bruk Flexbox for horisontal plassering */
+    justify-content: center; /* Sentrer innholdet horisontalt */
+    align-items: center; /* Sentrer innholdet vertikalt */
+    padding: 60px;
+    width: 98vw; /* Full bredde av viewporten */
+    max-width: none; /* Fjern eventuelle maksbegrensninger */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box; /* Inkluder padding i bredde */
+    margin-bottom: 30vh;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
+
+.middle-text h2 {
+
+    font-size: 2.5rem;
+    line-height: 1.2;
+    letter-spacing: 40px;
+    color:white
+    
+
+}
 .sectionartikel {
     margin-top: 100px;
     background-color: transparent;
@@ -981,6 +1025,36 @@ a h3 {
     
 }
 
+.sectionartikel h2 {
+ 
+    font-size: 2.5rem;
+    line-height: 1.2;
+    letter-spacing: 15px;
+    color:white;
+    margin-bottom: 50px;
+    
+    
+}
+
+.sectionartikel p {
+ 
+    font-size: 1.3rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    color:black;
+    font-family: 'lato', sans-serif;
+    font-weight: bold;
+    
+    
+    
+    
+}
+p.image-caption {
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: white;
+}
+
 .art-text-content {
     grid-area: 1 / 1; /* Plasserer tekstinnhold i første kolonne */
 }
@@ -988,6 +1062,19 @@ a h3 {
 .art-image-content {
     grid-area: 1 / 2; /* Plasserer bildeinnhold i andre kolonne */
     text-align: center; /* Sentrerer bildet horisontalt */
+    position: relative;
+
+}
+
+.image-circle {
+    position: absolute; /* Absolutt posisjonering for å plassere sirkelen over bildet */
+    top: -30px; /* Plassering fra toppen av containeren */
+    right: -30px; /* Plassering fra venstre kant av containeren */
+    width: 100px; /* Diameteren på sirkelen */
+    height: 100px; /* Diameteren på sirkelen */
+    background-color: red; /* Farge på sirkelen */
+    border-radius: 50%; /* Gjør elementet til en sirkel */
+    z-index: 15; /* Sørger for at sirkelen vises over bildet */
 }
 
 .art-text-contents {
@@ -1002,10 +1089,12 @@ a h3 {
 .art-image-content img {
     width: 100%; /* Tilpasser bildet til kolonnens bredde */
     height: auto; /* Bevarer bildeproporsjonene */
+    border-radius: 10px;
 }
 .art-image-contents img {
     width: 100%; /* Tilpasser bildet til kolonnens bredde */
     height: auto; /* Bevarer bildeproporsjonene */
+    border-radius: 10px;
 }
 
 .image-caption {
@@ -1018,7 +1107,7 @@ a h3 {
 .showcase-grid-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 200px);
+    grid-template-rows: repeat(4, 250px);
     grid-template-areas: 
         "item1 item1 item2 item3"
         "item1 item1 item4 item3"
