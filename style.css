@@ -248,7 +248,7 @@ main {
 main section {
     background: white;
     /*padding: 85px; */
-    margin-top: 60px;
+    margin-bottom: 40vh;
     border-radius: 5px;
     /*animation: appear 5s linear;
     animation-timeline: view();
@@ -363,7 +363,7 @@ section h1.visible {
 .fagfelt h1 {
     background-color: #FFABAB;
     writing-mode: vertical-lr;
-    padding-right: 50vh;
+    padding-right: 41vh;
     opacity: 0; /* Start hidden */
     transform: translateY(100px); /* Start off-screen */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;   /* Smooth transition */
@@ -387,7 +387,7 @@ section h1.visible {
     transform: translateY(100px); /* Start off-screen */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
     opacity: 0;
-    padding-right: 50vh;
+    padding-right: 41vh;
     
  
     
@@ -953,6 +953,7 @@ a h3 {
     pointer-events: none; /* Prevents interaction with this element */
     display: flex;
     flex-direction: column;
+    max-width: 80%;
 }
 
 .fixed-text h1 {
@@ -968,6 +969,93 @@ a h3 {
 .title-line {
     display: block; /* Ensure each line is on a new line */
 }
+
+
+.sectionartikel {
+    margin-top: 100px;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* To kolonner, én for tekst og én for bilde */
+    grid-gap: 20px; /* Mellomrom mellom tekst og bilde */
+    align-items: center; /* Sentere innholdet vertikalt hvis de har forskjellig høyde */
+    
+}
+
+.art-text-content {
+    grid-area: 1 / 1; /* Plasserer tekstinnhold i første kolonne */
+}
+
+.art-image-content {
+    grid-area: 1 / 2; /* Plasserer bildeinnhold i andre kolonne */
+    text-align: center; /* Sentrerer bildet horisontalt */
+}
+
+.art-text-contents {
+    grid-area: 1 / 2; /* Plasserer tekstinnhold i første kolonne */
+}
+
+.art-image-contents {
+    grid-area: 1 / 1; /* Plasserer bildeinnhold i andre kolonne */
+    text-align: center; /* Sentrerer bildet horisontalt */
+}
+
+.art-image-content img {
+    width: 100%; /* Tilpasser bildet til kolonnens bredde */
+    height: auto; /* Bevarer bildeproporsjonene */
+}
+.art-image-contents img {
+    width: 100%; /* Tilpasser bildet til kolonnens bredde */
+    height: auto; /* Bevarer bildeproporsjonene */
+}
+
+.image-caption {
+    font-size: 0.875em; /* Mindre skriftstørrelse for bildeteksten */
+    color: #ffffff; /* Lysere gråfarge for bildeteksten */
+    margin-top: 5px; /* Liten avstand over bildeteksten */
+    text-align: center; /* Sentere bildeteksten under bildet */
+}
+
+.showcase-grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    grid-template-areas: 
+        "item1 item1 item2 item3"
+        "item1 item1 item4 item3"
+        "item5 item6 item4 item7"
+        "item5 item8 item8 item7";
+    gap: 25px;
+    padding: 20px;
+}
+
+.showcase-grid-item {
+    background-color: #f0f0f000;
+    display: flex; /* For å sentrere innholdet */
+    align-items: center; /* Sentere vertikalt */
+    justify-content: center; /* Sentere horisontalt */
+    overflow: hidden; /* Skjule overskudd av bilder eller videoer */
+    border-radius: 8px; /* Runde kanter */
+
+}
+
+.item1 {grid-area: item1; /* Plassere i grid area "item1" */}
+.item2 {grid-area: item2; /* Plassere i grid area "item2" */}
+.item3 {grid-area: item3; /* Plassere i grid area "item3" */}
+.item4 {grid-area: item4; /* Plassere i grid area "item4" */}
+.item5 { grid-area: item5; }
+.item6 { grid-area: item6; }
+.item7 { grid-area: item7; }
+.item8 { grid-area: item8; }
+
+.showcase-grid-item img,
+.showcase-grid-item video {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; /* Samme radius for å matche grid item */
+    object-fit: cover;
+    display: block;
+}
+
 
 .gallery {
     margin-top: 20px;
@@ -1157,9 +1245,33 @@ font-size: 20px;
         height: 300px;
         
     }
-    
-}
 
+
+        .sectionartikel {
+        grid-template-columns: 1fr; /* Endre til én kolonne når skjermen er liten */
+    }
+
+    .art-text-content {
+        grid-area: 2 / 1; /* Plasserer tekstinnhold under bildet */
+        text-align: center; /* Sentrerer teksten horisontalt */
+    }
+    .art-text-contents {
+        grid-area: 2 / 1; /* Plasserer tekstinnhold under bildet */
+        text-align: center; /* Sentrerer teksten horisontalt */
+    }
+
+    .art-image-content {
+        grid-area: 1 / 1; /* Plasserer bildeinnholdet over tekstinnholdet */
+        text-align: center; /* Sentrerer bildet horisontalt */
+    }
+
+    .art-image-contents {
+        grid-area: 1 / 1; /* Plasserer bildeinnholdet over tekstinnholdet */
+        text-align: center; /* Sentrerer bildet horisontalt */
+}
+    
+
+ }
 
 
 
@@ -1265,3 +1377,4 @@ font-size: 20px;
     font-weight: 900;
     font-style: italic;
   }
+
