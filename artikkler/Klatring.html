@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prosjektdetaljer</title>
     <link rel="stylesheet" href="/style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 </head>
 <body style="background: linear-gradient(to right, #FFDDC1, #f7a87b, #e60000);">
     <nav>
@@ -16,7 +20,7 @@
         </ul>
     </nav>
 
-    <header class="project-header">
+    <header class="project-header" style="height: 10vh;">
         <div class="logo-container">
             <a href="/index.html">
                 <img src="/logo.png" alt="Logo" class="logo">
@@ -25,6 +29,109 @@
     </header>
 
     <main>
+        
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <img src="/bilder/klatringaktivitetsplan.png" alt="">
+                            <div class="slide-text">
+                                <!-- <h3 class="slide-title">Hei</h3>
+                                <p class="slide-description">Hei Hei Hei</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <img src="/bilder/klatringfacebookad.png" alt="">
+                            <div class="slide-text">
+                                <!-- This will be empty or could be styled differently if needed -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="slide-content">
+                            <img src="/bilder/klatringfacebookinfo.png" alt="">
+                            <div class="slide-text">
+                                <!-- This will be empty or could be styled differently if needed -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Flere slides her... -->
+                </div>
+                <div class="fixed-text">
+                    <h1 class="fixed-title lato-light">
+                        <span class="lato-bold">Høstkampanje 2023</span>
+                        <br> <!-- Line break to separate the text -->
+                        <span class="lato-light" style="color: white">Klatring på Grensen</span>
+                    </h1>
+                    <p class="fixed-description">For en fin dag å kunne kode. Jeg og min gruppe fikk arbeid å kode for klatring på grensen. </p>
+                </div>
+                <!-- Pagination, navigation buttons, and scrollbar -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+            <section class="sectionartikel">
+                <div class="art-text-content">
+                    <h2>Artikkel Tittel</h2>
+                    <p>Her er noe eksempeltekst for artikkelen. Dette er beskrivelsen som følger med bildet.</p>
+                </div>
+                <div class="art-image-content">
+                    <img src="/bilder/klatringfarger.png" alt="Beskrivelse av bilde">
+                    <p class="image-caption">Bildetekst som forklarer hva bildet viser.</p>
+                </div>
+            </section>
+
+            <section class="sectionartikel">
+                <div class="art-text-contents">
+                    <h2>Artikkel Tittel</h2>
+                    <p>Her er noe eksempeltekst for artikkelen. Dette er beskrivelsen som følger med bildet.</p>
+                </div>
+                <div class="art-image-contents">
+                    <img src="/bilder/klatringfarger.png" alt="Beskrivelse av bilde">
+                    <p class="image-caption">Bildetekst som forklarer hva bildet viser.</p>
+                </div>
+            </section>
+
+            
+            <div class="showcase-grid-container">
+                <div class="showcase-grid-item item1"> <!-- Grid Area for item1 -->
+                    <img src="/bilder/klatringfacebookad.png" alt="Beskrivelse av bilde 1">
+                </div>
+                <div class="showcase-grid-item item2"> <!-- Grid Area for item2 -->
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay loop muted playsinline></video>
+                </div>
+                <div class="showcase-grid-item item3"> <!-- Grid Area for item3 -->
+                    <img src="/googleana-logo.webp" alt="Beskrivelse av bilde 2">
+                </div>
+                <div class="showcase-grid-item item4"> <!-- Grid Area for item4 -->
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay loop muted playsinline></video>
+                </div>
+                <!-- Flere grid items kan legges til her -->
+                <div class="showcase-grid-item item5"> <!-- Grid Area for item5 -->
+                    <img src="/komm-preview.png" alt="Beskrivelse av bilde 3">
+                </div>
+                <div class="showcase-grid-item item6"> <!-- Grid Area for item6 -->
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay loop muted playsinline></video>
+                </div>
+                <div class="showcase-grid-item item7"> <!-- Grid Area for item7 -->
+                    <img src="/gametitle_preview.png" alt="Beskrivelse av bilde 4">
+                </div>
+                <div class="showcase-grid-item item8"> <!-- Grid Area for item8 -->
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
+          
+          
+        
+
+        <!--
         <section class="project-detailss">
             <div class="project-description">
                 <h2 style="color:#e60000">Klatring På Grensen: Høstkampanje</h2>
@@ -39,13 +146,16 @@
                 <img src="/markeds.png" alt="Prosjektbilde 1" class="slides active">
                 <img src="/bilder/klatringannonse.png" alt="Prosjektbilde 2" class="slides">
                 <img src="/bilder/klatringannonse2.png" alt="Prosjektbilde 3" class="slides">
-                <!-- Flere bilder -->
+               
                 <div class="slideshow-controls">
                     <button id="prev-slide">&#10094;</button>
                     <button id="next-slide">&#10095;</button>
                 </div>
             </div>
            
+        
+        -->
+        
             <!--
            
              <div class="project-tags">
@@ -59,7 +169,7 @@
                     </ul>
                 </div>
             
-            -->
+            
 
             <div class="color-palette">
                 <div class="color-box colorklatring1" title="#046838" alt="#"></div>
@@ -70,7 +180,11 @@
             </div>
             
            
-        </section>
+        </section>-->
+       
+    
+      
+       
 
         <section class="gallery">
             <h2>Gallery</h2>
@@ -92,8 +206,10 @@
                     <img src="/bilder/klatringannonse2.png" alt="Thumbnail 4" class="thumbnail">
                     <img src="/bilder/klatringfarger.png" alt="Thumbnail 4" class="thumbnail">
                     <img src="/bilder/klatringfacebookinfo.png" alt="Thumbnail 4" class="thumbnail">
+                    <img src="/bilder/klatringkampanjeside.png" alt="Thumbnail 4" class="thumbnail">
                     <!-- Flere små bilder -->
                 </div>
+                
         </section>
 
         <section class="fileroglink"> <h2>Relevante lenker og filer</h2>
@@ -114,6 +230,33 @@
     </footer>
 
     <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+
+
+        const swiper = new Swiper('.swiper', {
+            speed: 400,
+            spaceBetween: 10,
+            slidesPerView: 1,
+            loop:true,
+            
+
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable:true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 5000,
+            },
+  });
+
+
+    </script>
 </body>
 </html>
 
