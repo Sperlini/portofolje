@@ -29,6 +29,8 @@ body {
     text-align: center; /* Sentrerer teksten inne i elementet */
     font-size: 1.5rem;
     padding-bottom: 1rem;
+    padding-top: 1.2rem;
+
     
 }
 
@@ -466,7 +468,6 @@ section h1.visible {
 }
 
 .nyligpro-box {
-    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: transparent;
