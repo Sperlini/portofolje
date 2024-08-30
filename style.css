@@ -914,8 +914,8 @@ a h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(0deg, #e92b2b 0%, rgba(32, 22, 233, 0) 50%, #e6765a 100%); /* Definerer gradienten */
-    background: -webkit-linear-gradient(10deg, #e03737 0%, rgba(32, 31, 49, 0) 50%, #f89a63 100%);
+    background: linear-gradient(0deg, #e92b2b 0%, rgba(32, 22, 233, 0) 75%, #e6765a 100%); /* Definerer gradienten */
+    background: -webkit-linear-gradient(10deg, #e03737 0%, rgba(32, 31, 49, 0) 75%, #f89a63 100%);
     z-index: 2; /* Sørger for at gradienten ligger over bildet */
     pointer-events: none; /* Sørger for at pseudo-elementet ikke blokkerer museklikk på bildet */
     border-radius: 1.5rem; /* Sørger for at pseudo-elementet følger bildets runde kanter */
@@ -967,19 +967,22 @@ a h3 {
     display: flex;
     flex-direction: column;
     max-width: 80%;
+    
 }
 
 .fixed-text h1 {
     font-size: 3rem;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .fixed-text p {
-    max-width: 40%;
+    max-width: 60%;
     line-height: 1.6;
-    text-shadow: rgb(0, 0, 0) 3px 0 20px;
+    text-shadow: rgb(0, 0, 0) 10px 0 20px;
     font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
 }
 .title-line {
     display: block; /* Ensure each line is on a new line */
@@ -999,10 +1002,23 @@ a h3 {
     transform: translateX(-50%);
     box-sizing: border-box; /* Inkluder padding i bredde */
     margin-bottom: 30vh;
-    background-image: url();
+    background-image: url('/bilder/Endless/game-background-cover.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+   
+   
+}
+
+
+.middle-text .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover; /* Gjør at videoen dekker hele containeren uten å forvrenge */
+    z-index: -1; /* Legger videoen bak innholdet */
 }
 
 
@@ -1024,6 +1040,66 @@ a h3 {
     align-items: center; /* Sentere innholdet vertikalt hvis de har forskjellig høyde */
     
 }
+
+.sectionartikelmiddle {
+    display: flex; /* Bruk Flexbox til layout */
+    flex-direction: column; /* Standard er kolonne for mobil */
+    align-items: center; /* Sentrer innholdet horisontalt */
+    margin-top: 20px;
+    padding: 20px;
+      background-color: transparent;
+    flex-direction: column-reverse;
+
+}
+
+.art-text-middle-content {
+    text-align: center; /* Sentrerer teksten */
+    margin-bottom: 20px; /* Avstand under teksten */
+}
+
+.art-image-middle-content {
+    display: flex; /* Flex for å justere layouten */
+    flex-direction: column; /* Holder bildetekst under bildet */
+    align-items: center; /* Sentrerer bilde og tekst horisontalt */
+}
+
+.art-image-middle-content img {
+    max-width: 900px; /* Sørger for at bildet fyller containeren */
+    height: 50vh; /* Bevarer bildets proporsjoner */
+    margin-bottom: 10px; /* Avstand under bildet */
+}
+
+
+
+
+
+.sectionartikelmiddle h2{
+    padding-bottom: 50px;
+    padding-top: 55px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    line-height: 0.6;
+    letter-spacing: 15px;
+    text-align: center;
+    
+}
+
+.sectionartikelmiddle p{
+    font-size: 1.3rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    color: black;
+    font-family: 'lato', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+p.middle-image-caption {
+    font-size: 15px;
+}
+
+
 
 .sectionartikel h2 {
  
@@ -1051,7 +1127,7 @@ a h3 {
 }
 p.image-caption {
     padding-bottom: 10px;
-    font-size: 15px;
+    font-size: 12px;
     color: white;
 }
 
@@ -1079,11 +1155,14 @@ p.image-caption {
 
 .art-text-contents {
     grid-area: 1 / 2; /* Plasserer tekstinnhold i første kolonne */
+    padding-bottom: 180px;
+
 }
 
 .art-image-contents {
     grid-area: 1 / 1; /* Plasserer bildeinnhold i andre kolonne */
     text-align: center; /* Sentrerer bildet horisontalt */
+    margin-right: 45px;
 }
 
 .art-image-content img {
@@ -1095,6 +1174,21 @@ p.image-caption {
     width: 100%; /* Tilpasser bildet til kolonnens bredde */
     height: auto; /* Bevarer bildeproporsjonene */
     border-radius: 10px;
+}
+
+.art-image-contents video {
+    max-width: 100%; /* Gjør at videoen ikke overstiger bredden til sin container */
+    height: auto; /* Bevarer proporsjonene til videoen */
+    border-radius: 10px; /* Avrundede hjørner på videoen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Legg til en svak skygge under videoen */
+    margin-bottom: 10px; /* Litt avstand under videoen */
+}
+.art-image-content video {
+    max-width: 100%; /* Gjør at videoen ikke overstiger bredden til sin container */
+    height: auto; /* Bevarer proporsjonene til videoen */
+    border-radius: 10px; /* Avrundede hjørner på videoen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Legg til en svak skygge under videoen */
+    margin-bottom: 10px; /* Litt avstand under videoen */
 }
 
 .image-caption {
@@ -1160,7 +1254,7 @@ p.image-caption {
 .gallery-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 13px;
+    gap: 20px;
     justify-content: center;
    
 }
@@ -1192,6 +1286,7 @@ p.image-caption {
     background-color: rgba(0, 0, 0, 0.849);
     justify-content: center;
     align-items: center; /* Vertikal sentrering */
+    flex-direction: column; /* Endrer retningen til kolonne for å plassere teksten under bildet */
     z-index: 1001;
 }
 .modal-content {
@@ -1203,6 +1298,16 @@ p.image-caption {
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     max-height: 800px;
+}
+
+.modal-caption {
+    margin-top: 15px; /* Litt avstand fra bildet */
+    color: white; /* Tekstfarge */
+    text-align: center; /* Sentrer teksten */
+    font-size: 16px; /* Skriftstørrelse */
+    max-width: 80%; /* Maksimal bredde for å unngå at teksten blir for bred */
+    padding: 5px;
+    box-sizing: border-box; /* Inkluder padding i bredden */
 }
 
 .close {
@@ -1259,6 +1364,17 @@ font-size: 20px;
     #om-meg h1 {
         font-size: 45px; 
     }
+    .fixed-text p {
+    
+        font-size: 1rem;
+        max-width: 80%;
+       
+    }
+    .middle-text h2 {
+        font-size: 1.5rem;
+        letter-spacing: 15px;
+      
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1269,7 +1385,17 @@ font-size: 20px;
     #om-meg h1 {
         font-size: 45px; 
     }
+
+    .swiper-slide > img,
+.slide-content > img {
+   
+    height: 100%;
+    left: 0%;
+    width: 100%;
+   
 }
+}
+
 
 @media (max-width: 768px) {
     header {
@@ -1358,6 +1484,8 @@ font-size: 20px;
         grid-area: 1 / 1; /* Plasserer bildeinnholdet over tekstinnholdet */
         text-align: center; /* Sentrerer bildet horisontalt */
 }
+
+
     
 
  }
