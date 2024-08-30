@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portefølje</title>
     <link rel="stylesheet" href="style.css">
+    <link href="/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="/fontawesome/css/all.min.css" rel="stylesheet" />
 </head>
 <style>
 header {
@@ -16,8 +19,8 @@ header {
 <body style=" background: linear-gradient(to right, #FFDDC1, #f7a87b, #e60000);">
     <nav>
         <ul>
-            <li class="lato-bold"><a href="index.html">Hjem</a></li>
-            <li class="lato-bold"><a href="portfolio.html">Kontakt</a></li>
+            <li class="lato-bold"><a href="index.html">Hjem <i class="fa-solid fa-envelope"></i></a></li>
+            <li class="lato-bold"><a href="portfolio.html">Kontakt <i class="fa-solid fa-address-card"></i></a></li>
             <!-- Andre navigasjonspunkter -->
         </ul>
     </nav>
@@ -56,15 +59,7 @@ header {
                         <a class="center-text" href="/artikkler/Klatring.html">Se mer...</a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="web">
-                    <img src="maya-logo.png" alt="Project 1">
-                    <p class="lato-bold">React</p>
-                    <div class="project-details">
-                        <h2>Project 1</h2>
-                        <p>Detaljert beskrivelse av prosjekt 1.</p>
-                        <img src="project1-detail.jpg" alt="Project 1 Details">
-                    </div>
-                </div>
+                
                 <div class="portfolio-item" data-category="3dani">
                     <img src="/bilder/Anireklame/boks_thumbnail.png" alt="Project 2">
                     <p class="lato-bold">Animasjonsfilm: Brusreklame</p>
@@ -96,8 +91,9 @@ header {
     </main>
 
     <footer>
-        <p class="lato-light">&copy; Facebook</p>
-        <p class="lato-light">&copy; Instagram</p>
+        <p class="lato-light"><i class="fa-brands fa-facebook"></i>Facebook</p>
+        <p class="lato-light"><i class="fa-brands fa-instagram"></i>Instagram</p>
+        <p class="lato-light"><i class="fa-brands fa-github"></i>Github</p>
     </footer>
 
     <script src="script.js"></script>
