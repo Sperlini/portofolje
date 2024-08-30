@@ -461,7 +461,7 @@ section h1.visible {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Avstand mellom boksene */
+    gap: 40px; /* Avstand mellom boksene */
     margin-bottom: 20vh;
 }
 
@@ -495,7 +495,9 @@ section h1.visible {
     color: white;
 }
 .nyligpro-box h3 {
+    font-size: 1.2rem;
     color:white;
+    margin-top: 20px;
 }
  
 
