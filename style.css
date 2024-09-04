@@ -1298,14 +1298,14 @@ p.image-caption {
     z-index: 1001;
 }
 .modal-content {
-    width: 80%;
-    max-width: 1000px;
+
+    max-width: 80%;
     height: auto;
     border-radius: 10px;
     background-color: #fff;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    max-height: 800px;
+    max-height: 90%;
 }
 
 .modal-caption {
