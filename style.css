@@ -6,6 +6,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 14px;
 }
 
 body {
@@ -357,6 +358,7 @@ section h1.visible {
     flex-direction: column;
     align-items: right;
     justify-content: center;
+   
     
     
     
@@ -365,11 +367,14 @@ section h1.visible {
 .fagfelt h1 {
     background-color: #FFABAB;
     writing-mode: vertical-lr;
-    padding-right: 41vh;
+    font-size: 9rem;
     opacity: 0; /* Start hidden */
     transform: translateY(100px); /* Start off-screen */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;   /* Smooth transition */
     animation: fagom2 2s linear;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
 }
 .fagfelt h1.animate {
     opacity: 1;
@@ -389,7 +394,7 @@ section h1.visible {
     transform: translateY(100px); /* Start off-screen */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
     opacity: 0;
-    padding-right: 41vh;
+    
     
  
     
