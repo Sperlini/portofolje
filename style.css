@@ -1072,9 +1072,9 @@ a h3 {
 }
 
 .art-image-middle-content img {
-    max-width: 900px; /* Sørger for at bildet fyller containeren */
-    height: 50vh; /* Bevarer bildets proporsjoner */
-    margin-bottom: 10px; /* Avstand under bildet */
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 
