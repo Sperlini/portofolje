@@ -207,13 +207,12 @@ header .logo-container img {
 
 /* Navigasjonsstil */
 nav {
-    position:absolute; /* Sørg for at nav alltid er på toppen */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0); /* Gjør bakgrunnen litt gjennomsiktig */
-    z-index: 3; /* Sørg for at nav ligger over headeren */
-    
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 3;
 }
 
 nav ul {
@@ -225,20 +224,29 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 24px; /* Margin mellom meny elementer */
+    margin: 0 24px;
 }
 
 nav ul li a {
-    color: #ffffff; /* Endret fra hvit for bedre kontrast mot hvit bakgrunn */
+    color: #ffffff;
     text-decoration: none;
-    padding: 0 50px;
     font-size: 25px;
-
 }
 
 nav ul li a:hover {
-    background-color: rgba(87, 87, 87, 0.5); /* Semi-transparent hover effect */
+    background-color: rgba(87, 87, 87, 0.5);
 }
+
+/* Hamburger icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+
+
 
 main {
     padding-top: 70px;
@@ -698,7 +706,6 @@ a h3 {
 
 .overlay {
     display: none;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -1405,7 +1412,7 @@ font-size: 20px;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {  /* Tablet */
     header {
         height: 100vh; /* Reduser høyden på headeren for mindre skjermer */
     }
@@ -1434,8 +1441,43 @@ font-size: 20px;
         padding-top: 3rem;
     }
 
+      nav ul {
+        display: none; /* Skjul menyen på små skjermer */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9); /* Mørk bakgrunn når menyen er åpen */
+        position: absolute;
+        top: 60px;
+        width: 100%;
+    }
+
+    nav ul.open {
+        display: flex; /* Vis menyen når den er åpen */
+        padding-top: 20px;
+        top: 100px;
+        
+    }
+
+    .menu-icon {
+        display: block; /* Viser hamburger-ikonet på små skjermer */
+        cursor: pointer;
+        display: grid;
+        justify-content: end;
+        padding: 30px;
+       
+    }
+
+    .menu-icon.active {
+        background-color: black;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
     #om-meg {
         padding: 1rem;
+        
         
     }
 
@@ -1499,6 +1541,51 @@ font-size: 20px;
  }
 
 
+ @media (max-width: 568px) {  /* Mobil-landscape */
+    
+    #om-meg {
+        display: grid;
+        align-content: center;
+        justify-items: center
+        
+    }
+
+    #om-meg img {
+        max-width: 25vh;
+      
+    }
+
+
+    .nyligpro-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+       
+    }
+
+    .nyligpro-box {
+       
+        width: calc(100% - 100px);
+        max-width: 300px;
+        
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    section.middle-text {
+        width: 95vw;
+
+    }
+
+
+ }
+
+ @media (max-width: 320px) {  /* Mobil-portrait */ 
+
+
+ }
 
 
 .color1 {

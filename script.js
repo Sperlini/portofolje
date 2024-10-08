@@ -45,6 +45,39 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menuIcon');
+    const navMenu = document.getElementById('navMenu');
+    let lastScrollY = 0; // Variabel for å lagre siste rulleposisjon
+
+    menuIcon.addEventListener('click', function() {
+        navMenu.classList.toggle('open'); // Legger til/fjerner klassen "open"
+        menuIcon.classList.toggle('active'); // Legger til/fjerner klassen "active"
+
+        // Endre innholdet til hamburgerikonet
+        if (menuIcon.classList.contains('active')) {
+            menuIcon.innerHTML = '&times;'; // Endre til 'X' når aktiv
+        } else {
+            menuIcon.innerHTML = '&#9776;'; // Gå tilbake til hamburgerikonet
+        }
+    });
+
+    // Lytt etter rullehendelser
+    window.addEventListener('scroll', function() {
+        const currentScrollY = window.scrollY; // Nåværende rulleposisjon
+
+        // Sjekk om menyen er åpen og om vi har rullet mer enn 50 piksler
+        if (navMenu.classList.contains('open') && Math.abs(currentScrollY - lastScrollY) > 5) {
+            navMenu.classList.remove('open'); // Lukk menyen
+            menuIcon.classList.remove('active'); // Fjern aktiv klasse
+            menuIcon.innerHTML = '&#9776;'; // Gå tilbake til hamburgerikonet
+        }
+
+        lastScrollY = currentScrollY; // Oppdater siste rulleposisjon
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     const slideshow = document.querySelector('.slideshow');
     const slides = document.querySelectorAll('.slide');
@@ -218,23 +251,53 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
             });
         });
     
-        // Prosjekt detaljer funksjonalitet
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const details = item.querySelector('.project-details');
-                const overlay = document.createElement('div');
-                overlay.classList.add('overlay', 'visible');
-                document.body.appendChild(overlay);
-    
-                details.classList.add('visible');
-    
-                overlay.addEventListener('click', () => {
-                    details.classList.remove('visible');
-                    document.body.removeChild(overlay);
-                });
+      
+    });
+
+    /*
+    // Funksjon for å sjekke om enheten er en touch-enhet
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
+// Opprett overlay én gang
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
+document.body.appendChild(overlay);
+overlay.style.display = 'none'; // Skjul overlay til å begynne med
+
+document.querySelectorAll('.portfolio-item').forEach(item => {
+    const details = item.querySelector('.project-details');
+
+    if (!isTouchDevice()) {
+        // Desktop: Bruk hover
+        item.addEventListener('mouseenter', () => {
+            overlay.style.display = 'block';
+            overlay.classList.add('visible');
+            details.classList.add('visible');
+        });
+
+        item.addEventListener('mouseleave', () => {
+            overlay.style.display = 'none';
+            overlay.classList.remove('visible');
+            details.classList.remove('visible');
+        });
+    } else {
+        // Mobil: Bruk klikk
+        item.addEventListener('click', () => {
+            overlay.style.display = 'block';
+            overlay.classList.add('visible');
+            details.classList.add('visible');
+
+            overlay.addEventListener('click', () => {
+                overlay.style.display = 'none';
+                details.classList.remove('visible');
+                overlay.classList.remove('visible');
             });
         });
-    });
+    }
+}); */
+    
 
     document.addEventListener('DOMContentLoaded', function() {
         const slides = document.querySelectorAll('.slides');
@@ -342,4 +405,15 @@ const boxes = document.querySelectorAll('.box ,.nyligpro-container, porto');
         if (event.target === modal) {
             modal.style.display = 'none';
         }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.getElementById('menuIcon');
+        const navMenu = document.getElementById('navMenu');
+    
+        // Test om klikk-hendelsen fungerer
+        menuIcon.addEventListener('click', function() {
+            console.log("Hamburger ikon klikket");
+            navMenu.classList.toggle('open'); // Legger til/fjerner klassen "open"
+        });
     });
