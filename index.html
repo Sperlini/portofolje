@@ -10,6 +10,7 @@
     <link href="/fontawesome/css/all.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -49,7 +50,7 @@
         <section id="om-meg">
             
             
-            <div>
+            <div data-aos="fade-up-left">
                 <h1>Om meg</h1>
                 <p class="lato-black"> 
                     Mitt navn er Alexander, og jeg er en 29 år gammel nyutdannet innen Digitale Medier og Design i 2024. <br> <br>
@@ -59,7 +60,7 @@
   
             </div>
           
-            <img src="placeholder-face.jpg" alt="Bakgrunn 2">
+            <img src="placeholder-face.jpg" alt="Bakgrunn 2" data-aos="fade-up-left">
             
         </section>
             <section>
@@ -114,7 +115,7 @@
             </section>
            
             <section id="fagfelt" class="fagfelt"> 
-                <h1 class="lato-light"> <br>Erfaring </h1>
+                <h1 class="lato-light" > <br>Erfaring </h1>
                 <h2 class="lato-black">Ulike</h2> 
                
                 <div class="h3-container">
@@ -125,7 +126,7 @@
             </section>
       
        
-        <section class="box color1 kategorier" id="box">
+        <section class="box color1 kategorier" id="box" data-aos="zoom-in">
           
             <div class="content-wrapper">
                 <div class="text-content">
@@ -139,7 +140,7 @@
             </div>
         </section>
 
-        <section class="box color2" id="box">
+        <section class="box color2" id="box" data-aos="zoom-in">
             <div class="content-wrapper">
 
                 <div class="image-content">
@@ -152,7 +153,7 @@
                 </div>
             </div>
         </section>
-        <section class="box color3" id="box">
+        <section class="box color3" id="box" data-aos="zoom-in">
             <div class="content-wrapper">
                
                 <div class="text-content">
@@ -168,7 +169,7 @@
                
             </div>
         </section>
-        <section class="box color4" id="box">
+        <section class="box color4" id="box" data-aos="zoom-in">
             <div class="content-wrapper">
                 <div class="image-content">
                     <a href="/portefolge.html?filter=spillut"><img style="object-position: left;" src="ingame-preview.png" alt="Bildetekst"></a>
@@ -188,7 +189,7 @@
 
         </section>
         
-        <div class="nyligpro-container color4">
+        <div class="nyligpro-container color4" data-aos="zoom-in">
             <div class="nyligpro-box">
                 <div class="image-container">
                     <a a href="/artikkler/Endlessrunner.html">
@@ -199,7 +200,7 @@
                 <h3><a href="/artikkler/Endlessrunner.html">Endless Runner</a></h3>
                 <p>Mobilspill laget i "Unity" med fokus på 2D</p>
             </div>
-            <div class="nyligpro-box">
+            <div class="nyligpro-box" data-aos="zoom-in">
                 <div class="image-container">
                     <a a href="/artikkler/Endlessrunner.html">
                         <img src="komm-preview.png" alt="Prosjekt 1">
@@ -209,7 +210,7 @@
                 <h3><a href="/portefolge.html">Nyhetsartikeler</a></h3>
                 <p>Kommunikasjons-<br> design baserte nyheter</p>
             </div>
-            <div class="nyligpro-box">
+            <div class="nyligpro-box" data-aos="zoom-in">
                 <div class="image-container">
                     <a a href="/portefolge.html">
                         <img src="modelering-preview.png" alt="Prosjekt 1">
@@ -229,6 +230,11 @@
         <p class="lato-light"><i class="fa-brands fa-github"></i>Github</p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
    
 </body>
 </html>
