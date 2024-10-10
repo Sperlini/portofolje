@@ -51,7 +51,7 @@ header .overlay {
     display: flex;
     align-items: center;
     z-index: 2; /* Sørg for at teksten er synlig over bildene */
-    background-color: rgba(0, 0, 0, 0.3); /* Optional for better text visibility */
+    background-color: rgba(0, 0, 0, 0.7); /* Optional for better text visibility */
 }
 
 header .text {
@@ -62,13 +62,14 @@ header .text {
     opacity: 0;
     animation: startfade 1s ease-in 0.02s;
     animation-fill-mode: both;
+   
     
 }
 
 header .text h1 {
     font-size: 3.815rem;
     color: white;
-    padding-left: 20vh;
+    
     background: linear-gradient(to right, #FFDDC1, #f7a87b, #e60000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -79,6 +80,15 @@ header .text h1 {
    
     
 }
+
+header .text h2 {
+    font-size: 3.052rem;
+    color: white;
+   
+}
+
+
+
 
 @keyframes startfade {
     0% {
@@ -158,11 +168,6 @@ header .text h1 {
 }
 
 
-header .text h2 {
-    font-size: 3.052rem;
-    color: white;
-    padding-left: 25vh;
-}
 
 
 header .right {
@@ -238,11 +243,9 @@ nav ul li a:hover {
 }
 
 /* Hamburger icon */
-.menu-icon {
-    display: none;
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
+#menuIcon {
+    display: none; /* Skjuler hamburgerikonet */
+    color: white; 
 }
 
 
@@ -252,7 +255,7 @@ main {
     padding-top: 70px;
     width: 80%;
     margin: 0 auto; /* Horisontal sentrering av main-elementet */
-  
+    max-width: 90rem;
     align-items: center; /* Vertikal sentrering av innhold i main */
 }
 
@@ -287,7 +290,7 @@ section h1.visible {
 } */
 
 #om-meg{
-    padding: 25vh 20vh;
+    padding: 25vh 5vh;
     display: flex;
     align-items: flex-start;
     background-color: #f4f4f4;
@@ -323,11 +326,16 @@ section h1.visible {
    
 }
 
+.slideshow-container h1 {
+    font-size: 3rem;
+   
+}
+
 .slideshow {
     display: flex;
     animation: slide 18s linear infinite;
     padding-bottom: 10vh;
-    padding-top: 10vh;
+    padding-top: 5vh;
    
 }
 
@@ -504,7 +512,7 @@ section h1.visible {
 }
 
 .nyligpro-box p {
-    padding: 4px;
+    padding: 1rem;
     margin: 0;
     color: white;
 }
@@ -512,6 +520,10 @@ section h1.visible {
     font-size: 1.2rem;
     color:white;
     margin-top: 20px;
+}
+
+.nyligpro-box a {
+    font-size: 1.5rem;
 }
  
 
@@ -575,7 +587,7 @@ footer i {
     border-radius: 5px;
     margin-bottom: 20px;
     height: 25vh;
-    padding: 8px 8px 2px;
+    
         
     
 }
@@ -587,15 +599,22 @@ footer i {
     text-align: center;
 }
 
+.text-content h3 {
+
+    font-size: 1.5rem;
+  
+}
+
 .image-content {
-    flex: 1 1 50%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 40% */
+    height: 25vh; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 40% */
+    flex: 1 1 50%;
 }
 
 #box img {
     width: 100%; /* Sikrer at bildet fyller containerens bredde */
     height: auto;
     object-fit: cover;
-    height: 23vh;
+    height: 25vh;
     border-radius: 5px;
     
 }
@@ -1390,6 +1409,12 @@ font-size: 20px;
         letter-spacing: 15px;
       
     }
+
+    main section {
+      
+        margin-bottom: 15vh;
+   
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1433,50 +1458,10 @@ font-size: 20px;
         margin-left: 0; /* Fjerner eventuell venstre margin */
         padding-left: 40px;
     }
-    #om-meg img {
-     
-    
-        max-width: 20vh; /* Juster størrelsen på bildet etter behov */
-        padding-left: 1rem;
-        padding-top: 3rem;
-    }
-
-      nav ul {
-        display: none; /* Skjul menyen på små skjermer */
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9); /* Mørk bakgrunn når menyen er åpen */
-        position: absolute;
-        top: 60px;
-        width: 100%;
-    }
-
-    nav ul.open {
-        display: flex; /* Vis menyen når den er åpen */
-        padding-top: 20px;
-        top: 100px;
-        
-    }
-
-    .menu-icon {
-        display: block; /* Viser hamburger-ikonet på små skjermer */
-        cursor: pointer;
-        display: grid;
-        justify-content: end;
-        padding: 30px;
-       
-    }
-
-    .menu-icon.active {
-        background-color: black;
-    }
-
-    nav ul li {
-        text-align: center;
-        padding: 10px 0;
-    }
 
     #om-meg {
         padding: 1rem;
+        align-items: center;
         
         
     }
@@ -1491,13 +1476,116 @@ font-size: 20px;
         
     }
 
+    #om-meg img {
+     
+    
+        max-width: 30vh; /* Juster størrelsen på bildet etter behov */
+        padding-left: 1rem;
+        padding-top: 3rem;
+    }
+
+    .slideshow-container h1 {
+        font-size: 1.5rem;
+       
+    }
+
+    
+
+    nav ul {
+   
+        overflow: hidden; /* Skjul innholdet når høyden er 0 */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9); /* Mørk bakgrunn når menyen er åpen */
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        opacity: 0; /* Start som usynlig */
+    }
+    
+    nav ul.open {
+        opacity: 1; /* Gjør menyen synlig */
+        padding-top: 20px;
+        top: 100px;
+    }
+    
+    #menuIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 50px;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+    
+    .menu-icon.active {
+        background-color: rgb(255, 255, 255);
+    }
+    
+    div#menuIcon.active {
+        color: black;
+        z-index: 10000;
+        font-size: 50px;
+        border-radius: 5px;
+        padding: 22px;
+    }
+    
+    #navMenu {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden; /* Skjuler navigasjonsmenyen på små skjermer */
+        transition: max-height 0.5s ease, opacity 0.5s ease; /* Smooth åpne/lukke animasjon */
+    }
+    
+    #navMenu.open {
+        max-height: 470px; /* Sett en stor nok høyde for innholdet */
+        opacity: 1;
+        position: absolute;
+        top: 0px;
+        background-color: rgba(0, 0, 0, 0.562); /* Legg til bakgrunnsfarge */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    #navMenu li {
+        margin: 30px 0; /* Vertikalt mellomrom mellom <li>-elementer */
+        list-style: none; /* Fjern punktmerking */
+        opacity: 0; /* Skjul dem ved start */
+        
+    }
+
+    /* Når menyen er åpen, vis <li> med en forsinkelse for smooth animasjon */
+    #navMenu.open li {
+        opacity: 1; /* Gjør <li> synlig */
+        transition: opacity 0.1s ease; /* Smooth overgang */
+        transition-delay: 0.2s; /* Forsinkelse på <li>-elementene */
+    }
+    
+    nav ul li {
+        text-align: center;
+        padding: 20px 0;
+       
+    }
+    
+    nav ul li a {
+        font-size: 2.5rem;
+    }
+    main section {
+      
+        margin-bottom: 10vh;
+   
+    }
+
+    
+
     .slideshow{
         padding-bottom: 0vh;
-    padding-top: 0vh;
+        padding-top: 0vh;
     }
 
     .slide {
-        min-width: 30%; /* 100% / 4 visible slides */
+        min-width: 40%; /* 100% / 4 visible slides */
     }
 
     .portfolio-filter{
@@ -1535,6 +1623,10 @@ font-size: 20px;
         text-align: center; /* Sentrerer bildet horisontalt */
 }
 
+.content-wrapper {
+    margin-top: 15rem;
+}
+
 
     
 
@@ -1551,7 +1643,7 @@ font-size: 20px;
     }
 
     #om-meg img {
-        max-width: 25vh;
+        max-width: 30vh;
       
     }
 
@@ -1565,8 +1657,8 @@ font-size: 20px;
 
     .nyligpro-box {
        
-        width: calc(100% - 100px);
-        max-width: 300px;
+        width: 80%;
+       
         
     }
 
@@ -1584,6 +1676,23 @@ font-size: 20px;
 
  @media (max-width: 320px) {  /* Mobil-portrait */ 
 
+
+    #box img {
+       
+        height: 10.5rem;
+    }
+
+    .content-wrapper {
+      
+        height: 25vh;
+      
+    }
+
+    .slideshow-container h1 {
+        font-size: 1rem;
+        padding-bottom: 40px;
+       
+    }
 
  }
 

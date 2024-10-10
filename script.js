@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const currentScrollY = window.scrollY; // Nåværende rulleposisjon
 
-        // Sjekk om menyen er åpen og om vi har rullet mer enn 50 piksler
+        // Sjekk om menyen er åpen og om vi har rullet mer enn 5 piksler
         if (navMenu.classList.contains('open') && Math.abs(currentScrollY - lastScrollY) > 5) {
             navMenu.classList.remove('open'); // Lukk menyen
             menuIcon.classList.remove('active'); // Fjern aktiv klasse
