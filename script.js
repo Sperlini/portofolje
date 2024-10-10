@@ -381,33 +381,9 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
     });
 
 
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalCaption = document.getElementById('modalCaption'); // Hent elementet for bildeteksten
-    const closeBtn = document.getElementsByClassName('close')[0];
-    
-    // Legg til klikkhendelse for alle miniatyrbilder
-    document.querySelectorAll('.thumbnail').forEach(img => {
-        img.addEventListener('click', function() {
-            modal.style.display = 'flex'; // Endre til 'flex' for å bruke flexbox sentrering
-            modalImg.src = this.src;
-            modalCaption.textContent = this.alt; // Sett bildeteksten til alt-teksten
-        });
-    });
-    
-    // Legg til klikkhendelse for lukk-knappen
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // Lukk modal når man klikker utenfor bildet
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
 
-    document.addEventListener('DOMContentLoaded', function() {
+    const closeBtn = document.getElementsByClassName('close')[0];
+    closeBtn.addEventListener('DOMContentLoaded', function() {
         const menuIcon = document.getElementById('menuIcon');
         const navMenu = document.getElementById('navMenu');
     

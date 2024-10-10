@@ -7,6 +7,7 @@
     <link href="/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="/fontawesome/css/solid.css" rel="stylesheet" />
     <link href="/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/node_modules/lightbox2/src/css/lightbox.css" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css">
     <link
   rel="stylesheet"
@@ -350,29 +351,52 @@
             <div>
               
                 <div class="gallery-grid">
-                    
-                    <img src="/bilder/Endless/game-meny.png" alt="Hovedmenyen" class="thumbnail">
-                    <img src="/bilder/Endless/gametitle.jpg" alt="Poster av spillet med tittel" class="thumbnail">
-                    <img src="/bilder/Endless/low-fi-wireframes.png" alt="Skisser over UI oppbyggning" class="thumbnail">
-                    <img src="/bilder/Endless/pause-meny.png" alt="Pausemeny" class="thumbnail">
-                    <img src="/bilder/Endless/character-egypt.png" alt="Egypt Nivået" class="thumbnail">
-                    <img src="/bilder/Endless/character-ice.png" alt="Istid Nivået" class="thumbnail">
-                    <img src="/bilder/Endless/character-egypt.png" alt="Egypt Nivået" class="thumbnail">
-                    <img src="/bilder/Endless/character-inca.png" alt="Inca Nivået" class="thumbnail">
-                    <img src="/bilder/Endless/character-pirat.png" alt="Pirat Nivået" class="thumbnail">
-                    <img src="/bilder/Endless/character-cyber.png" alt="Fremtids Verden" class="thumbnail">
-                    <img src="/bilder/Endless/character.png" alt="Hovedkarakteren" class="thumbnail">
+                    <a href="/bilder/Endless/game-meny.png" data-lightbox="portfolio" data-title="Hovedmenyen" class="thumbnail">
+                        <img class="test-img" src="/bilder/Endless/game-meny.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+
+                    <a href="/bilder/Endless/gametitle.jpg" data-lightbox="portfolio" data-title="Poster av spillet med tittel" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/gametitle.jpg" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+
+                    <a href="/bilder/Endless/low-fi-wireframes.png" data-lightbox="portfolio" data-title="Skisser over UI oppbyggning" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/low-fi-wireframes.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+
+                    <a href="/bilder/Endless/pause-meny.png" data-lightbox="portfolio" data-title="Pausemeny" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/pause-meny.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+                    <a href="/bilder/Endless/character-egypt.png" data-lightbox="portfolio" data-title="Egypt Nivået" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/character-egypt.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+
+                    <a href="/bilder/Endless/character-ice.png" data-lightbox="portfolio" data-title="Istid Nivået" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/character-ice.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+
+                    <a href="/bilder/Endless/character-inca.png" data-lightbox="portfolio" data-title="Inca Nivået" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/character-inca.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+
+                    <a href="/bilder/Endless/character-pirat.png" data-lightbox="portfolio" data-title="Pirat Nivået" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/character-pirat.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+
+                    <a href="/bilder/Endless/character-cyber.png" data-lightbox="portfolio" data-title="Fremtids Nivået" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/character-cyber.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+
+                    <a href="/bilder/Endless/character.png" data-lightbox="portfolio" data-title="Hovedkarakteren" class="thumbnail">
+                        <img class="#" src="/bilder/Endless/character.png" alt="Bilde 1" style="width: 300px; height: 200px;">
+                    </a>
+                
                     <!-- Flere små bilder -->
                 </div>
                 
         </section>
        
         <!-- Modal for å vise stort bilde -->
-        <div id="imageModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImage">
-            <div id="modalCaption" class="modal-caption"></div>
-        </div>
+       
     </main>
 
     <footer>
@@ -380,8 +404,9 @@
         <p class="lato-light"><i class="fa-brands fa-instagram"></i>Instagram</p>
         <p class="lato-light"><i class="fa-brands fa-github"></i>Github</p>
     </footer>
-
+    
     <script src="/script.js"></script>
+    <script src="/node_modules/lightbox2/dist/js/lightbox-plus-jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
 
@@ -409,6 +434,7 @@
 
 
     </script>
+
 </body>
 </html>
 

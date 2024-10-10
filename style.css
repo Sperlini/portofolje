@@ -35,6 +35,7 @@ body {
     
 }
 
+
 header {
     position: relative;
     height: 100vh;
@@ -982,6 +983,13 @@ a h3 {
     margin: 0 0 10px;
 }
 
+.test-img{
+    
+        max-width: 100%; /* Responsivitet */
+        height: auto; /* Forhindre forvrengning */
+        border-radius: 10px;
+}
+
 .slide-description {
     font-size: 1em;
     margin: 0;
@@ -1296,11 +1304,10 @@ p.image-caption {
 
 
 .thumbnail {
-    width: 300px; /* Juster størrelse som ønsket */
-    height: 200px;
-    cursor: pointer;
-    border: 2px solid #f7a87b;
-    border-radius: 10px;
+    width: 100%; /* Setter bredden til 100% av forelderen */
+    max-width: 300px; /* Maksimal bredde */
+    height: auto; /* Forhindre forvrengning */
+    cursor: pointer; /* Endrer musepekeren til en hånd når man svever over */
 }
 
 
