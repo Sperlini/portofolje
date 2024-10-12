@@ -249,15 +249,19 @@ nav ul li a:hover {
     color: white; 
 }
 
-
+.container {
+    max-width: 1140px; /* Definerer maksimal bredde for innholdet */
+    margin: 0 auto;    /* Sentraliserer innholdet ved å legge margin på venstre og høyre side */
+    padding: 0 20px;   /* Legger til litt polstring for å unngå at innholdet treffer kantene */
+  }
 
 
 main {
-    padding-top: 70px;
-    width: 80%;
-    margin: 0 auto; /* Horisontal sentrering av main-elementet */
-    max-width: 90rem;
+
+    max-width: 1400px;   /* 1140px; */
+    margin: 0 auto; /* Horisontal sentrering av main-elementet *
     align-items: center; /* Vertikal sentrering av innhold i main */
+    padding: 0 20px; 
 }
 
 main section {
@@ -291,12 +295,16 @@ section h1.visible {
 } */
 
 #om-meg{
-    padding: 25vh 5vh;
+    max-width: 1400px;  /*1140px */ /* Definerer maksimal bredde for innholdet */
+    margin: 0 auto;    /* Sentraliserer innholdet ved å legge margin på venstre og høyre side */
+    padding: 25vh 20px;   /* Legger til litt polstring for å unngå at innholdet treffer kantene */
     display: flex;
     align-items: flex-start;
     background-color: #f4f4f4;
     
 }
+
+
 #om-meg p{
     flex: 1 1 100%;
     font-size: 25px;
@@ -983,11 +991,8 @@ a h3 {
     margin: 0 0 10px;
 }
 
-.test-img{
-    
-        max-width: 100%; /* Responsivitet */
-        height: auto; /* Forhindre forvrengning */
-        border-radius: 10px;
+.lb-data .lb-caption {
+    font-size: 2rem;  
 }
 
 .slide-description {
@@ -1223,14 +1228,14 @@ p.image-caption {
     height: auto; /* Bevarer proporsjonene til videoen */
     border-radius: 10px; /* Avrundede hjørner på videoen */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Legg til en svak skygge under videoen */
-    margin-bottom: 10px; /* Litt avstand under videoen */
+    
 }
 .art-image-content video {
     max-width: 100%; /* Gjør at videoen ikke overstiger bredden til sin container */
     height: auto; /* Bevarer proporsjonene til videoen */
     border-radius: 10px; /* Avrundede hjørner på videoen */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Legg til en svak skygge under videoen */
-    margin-bottom: 10px; /* Litt avstand under videoen */
+     /* Litt avstand under videoen */
 }
 
 .image-caption {
@@ -1607,8 +1612,21 @@ font-size: 20px;
     }
 
 
-        .sectionartikel {
-        grid-template-columns: 1fr; /* Endre til én kolonne når skjermen er liten */
+    .sectionartikel {
+    grid-template-columns: 1fr; /* Endre til én kolonne når skjermen er liten */
+       
+        
+
+    }
+
+    .sectionartikel p {
+        font-size: 1.5rem; 
+    }
+
+    p.image-caption {
+      
+        font-size: 15px;
+      
     }
 
     .art-text-content {
@@ -1623,11 +1641,13 @@ font-size: 20px;
     .art-image-content {
         grid-area: 1 / 1; /* Plasserer bildeinnholdet over tekstinnholdet */
         text-align: center; /* Sentrerer bildet horisontalt */
+        margin-right: 0px;
     }
 
     .art-image-contents {
         grid-area: 1 / 1; /* Plasserer bildeinnholdet over tekstinnholdet */
         text-align: center; /* Sentrerer bildet horisontalt */
+        margin-right: 0px; 
 }
 
 .content-wrapper {
